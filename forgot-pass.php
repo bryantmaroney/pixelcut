@@ -1,31 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-
-<title>Pixelcut Forgot Password</title> 
-
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="responsive.css" />
-
-<!-- ROBOTO GOOG FONT -->
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-<!-- OPEN ASNS GOOG FONT -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-
-</head>
-<body>
+<?php include('includes/header.php');?>
 
 <div class="logo-wrapper">
 	<div class="logo-margin">
 		<div class="login-logo"></div>
 		<div class="login-box forgotpass-box">
-			<div class="login-welcome">
-				Forgot your password?<br>
-				Fill in your email below to reset your password.
-			</div>
+			<div class="setuppass-title">Forgot Your Password? No Biggie.</div>
+			<div class="login-welcome setuppass-welcome">To reset your lost password, enter the email<br>address connected to your account and we’ll send a password reset link. <strong>Easy Peasy</strong>.</div>
 			<form class="login-formarea">
 				<div>
 					<label>EMAIL ADDRESS</label>
@@ -33,7 +13,7 @@
 					<span class="login-at"></span>
 				</div>
 				<div>
-					<submit>RESET</submit>
+					<submit style="width:172px;">RESET PASSWORD</submit>
 				</div>
 			</form>
 		</div>
