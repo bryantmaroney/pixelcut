@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="26px" viewBox="0 0 20 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>locked-padlock</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="523" y="366" width="394" height="359" rx="4"></rect>
+        <filter x="-4.1%" y="-3.9%" width="108.1%" height="108.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0986942745 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Authentication" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sign-In" transform="translate(-861.000000, -601.000000)">
+            <g id="Background">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Password-Fieldset" transform="translate(549.000000, 566.000000)">
+                <g id="8)-Text-Field/1)-Field/1)-Default-Copy-9" transform="translate(0.000000, 24.000000)">
+                    <g id="Setup/Text-Fields-&amp;-Inputs/▭-Shape" fill="#F7F9FC">
+                        <rect id="🎨-Background" x="0" y="0" width="343" height="48" rx="12"></rect>
+                    </g>
+                    <g id="Setup/Text-Fields-&amp;-Inputs/▭-Shape" stroke="#E4E9F2">
+                        <rect id="🎨-Background" x="0.5" y="0.5" width="342" height="47" rx="12"></rect>
+                    </g>
+                </g>
+                <g id="locked-padlock" transform="translate(312.000000, 35.000000)" fill="#8F9BB3" fill-rule="nonzero">
+                    <path d="M18.5536,10.48336 L18.0477867,10.48336 L18.0477867,8.116 C18.0477867,3.73738667 14.5730667,0.07968 10.23008,0.0016 C10.1114133,-0.000533333333 9.87429333,-0.000533333333 9.75568,0.0016 C5.41258667,0.07968 1.93792,3.73738667 1.93792,8.116 L1.93792,10.48336 L1.43205333,10.48336 C0.652533333,10.48336 0.0166933333,11.2877333 0.0166933333,12.2811733 L0.0166933333,24.15488 C0.0166933333,25.1472 0.652533333,25.9590933 1.43210667,25.9590933 L18.5536,25.9590933 C19.33312,25.9590933 19.9690133,25.1472 19.9690133,24.15488 L19.9690133,12.2811733 C19.9690133,11.2877867 19.3331733,10.48336 18.5536,10.48336 Z M11.5969067,18.2059733 L11.5969067,21.79376 C11.5969067,22.2045867 11.25296,22.5522667 10.8418133,22.5522667 L9.144,22.5522667 C8.7328,22.5522667 8.38885333,22.2045867 8.38885333,21.79376 L8.38885333,18.2059733 C7.99008,17.81344 7.75792,17.2706667 7.75792,16.67024 C7.75792,15.5324267 8.63744,14.55472 9.75573333,14.5095467 C9.87424,14.5047467 10.1116267,14.5047467 10.2301333,14.5095467 C11.3484267,14.55472 12.2279467,15.5324267 12.2279467,16.67024 C12.22784,17.2706667 11.99568,17.81344 11.5969067,18.2059733 Z M14.7139733,10.48336 L10.23008,10.48336 L9.75568,10.48336 L5.27184,10.48336 L5.27184,8.116 C5.27184,5.50773333 7.39152,3.35109333 9.99285333,3.35109333 C12.5941867,3.35109333 14.7139733,5.50773333 14.7139733,8.116 L14.7139733,10.48336 L14.7139733,10.48336 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>at</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="523" y="366" width="394" height="359" rx="4"></rect>
+        <filter x="-4.1%" y="-3.9%" width="108.1%" height="108.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0986942745 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Authentication" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sign-In" transform="translate(-858.000000, -508.000000)">
+            <g id="Background">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Username-Fieldset" transform="translate(549.000000, 473.000000)">
+                <g id="■---Background-" transform="translate(0.000000, 21.000000)" fill="#F7F9FC">
+                    <rect id="🎨-Background" x="0" y="0" width="343" height="48" rx="12"></rect>
+                </g>
+                <g id="□---Stroke-" transform="translate(0.000000, 21.000000)" stroke="#E4E9F2">
+                    <rect id="🎨-Background" x="0.5" y="0.5" width="342" height="47" rx="12"></rect>
+                </g>
+                <g id="at" transform="translate(309.000000, 35.000000)" fill="#8F9BB3" fill-rule="nonzero">
+                    <path d="M10,0 C4.48607158,0 0,4.48607158 0,10 C0,15.5139284 4.48607158,20 10,20 C11.7584281,20 13.4875355,19.5373507 15.0012235,18.6615066 L13.7500054,16.4971817 C12.6159843,17.1533135 11.3189606,17.5000107 10,17.5000107 C5.86427464,17.5000107 2.49998927,14.1357254 2.49998927,10 C2.49998927,5.86427464 5.86427464,2.49998927 10,2.49998927 C14.1357254,2.49998927 17.5000107,5.86427464 17.5000107,10 L17.5000107,11.0888594 C17.5000107,11.9067489 16.9745129,12.4999893 16.2499946,12.4999893 C15.5608931,12.4999893 14.9999785,11.9390747 14.9999785,11.2499732 L14.9999785,6.24999463 L13.2720303,6.24999463 C12.392666,5.48177435 11.2565843,4.99997854 10,4.99997854 C7.24303579,4.99997854 4.99997854,7.24303579 4.99997854,10 C4.99997854,12.7569642 7.24303579,15.0000215 10,15.0000215 C11.3128646,15.0000215 12.4998605,14.4808342 13.3929622,13.6502376 C14.0813768,14.4683418 15.0995746,15.0000215 16.2499946,15.0000215 C18.352673,15.0000215 20,13.281904 20,11.0888594 L20,10 C20,4.48607158 15.5139284,0 10,0 Z M10,12.4999893 C8.62119593,12.4999893 7.50001073,11.3787611 7.50001073,10 C7.50001073,8.62119593 8.62123885,7.50001073 10,7.50001073 C11.3788041,7.50001073 12.4999893,8.62123885 12.4999893,10 C12.4999893,11.3788041 11.3788041,12.4999893 10,12.4999893 L10,12.4999893 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
