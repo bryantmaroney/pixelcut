@@ -1,4 +1,4 @@
-<?php include('includes/header.php');?>
+<?php include('../../includes/header.php');?>
 
 <div class="dash-left">
 	<div class="dash-logoarea">
@@ -21,7 +21,7 @@
 		<div class="dash-header-arrow"></div>
 		<div class="dash-header-title">Team Member Dashboard</div>
 		<div class="dash-header-usericon">
-			<img src="images/usericon.jpg">
+			<img src="../../images/usericon.jpg">
 		</div>
 	</div>
 	<div class="dash-contentarea">
