@@ -12,6 +12,14 @@
 
 <link rel="stylesheet" href="../../css/style.css" />
 <link rel="stylesheet" href="../../css/responsive.css" />
+<link href="../../css/tagify.css" rel="stylesheet" type="text/css">
+
+<!-- jquery ui styles -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../../js/tagify.js"></script>
 
 <!-- ROBOTO GOOG FONT -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
@@ -20,3 +28,7 @@
 
 </head>
 <body>
+	
+<!-- change log -->
+<?php include('../../includes/changelog.php');?>
+<!-- end changelog -->	
