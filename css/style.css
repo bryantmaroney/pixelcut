@@ -1963,6 +1963,216 @@ ul.list-users-page li ul li .dash-page-listactions:last-child {
     margin-right: 0;
 }
 
+.content-assign-topbox {
+	float: left;
+    width: calc(100% - 48px);
+    background: #FFFFFF;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 24px;
+    margin-top: 30px;
+}
+
+.content-assign-topbox ul {
+	float: left;
+	width: 33.33%;
+	margin: 0;
+	padding: 0;
+}
+
+.content-assign-topbox ul li {
+	list-style-type: none;
+	float: left;
+	clear: left;
+	margin-bottom: 14px;
+}
+
+.content-assign-topbox ul li:last-child {
+	margin-bottom: 0;
+}
+
+.content-assign-topbox ul li label {
+	float: left;
+    font-size: 12px;
+    color: #8992A3;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.content-assign-topbox ul li div {
+	float: left;
+	font-size: 15px;
+	color: #222B45;
+	font-weight: 600;
+	clear: left;
+	width: 100%;
+}
+
+.content-assign-topbox ul li div a {
+	color: #8F9BB3;
+}
+
+.content-assign-middlebox {
+	float: left;
+    width: calc(100% - 48px);
+    background: #FFFFFF;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 24px;
+    margin-top: 30px;
+}
+
+.content-assign-middlebox div {
+	float: left;
+}
+
+.content-assign-middlebox div label {
+	float: left;
+    font-size: 12px;
+    color: #8992A3;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.content-assign-middlebox div div {
+	float: left;
+    font-size: 15px;
+    color: #222B45;
+    font-weight: 600;
+    clear: left;
+    width: 100%;
+}
+
+.content-assign-finalmodal {
+	position: fixed;
+	background: rgba(0,0,0,0.8);
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+}
+
+.content-assign-finalboxwrap {
+	position: absolute;
+	z-index: 9999;
+	width: 100%;
+	height: 100%;
+}
+
+.content-assign-finalbox {
+	width: calc(578px - 80px);
+	margin-left: auto;
+	margin-right: auto;
+	padding: 40px;
+	background: #FFFFFF;
+	margin-top: 100px;
+	border-radius: 4px;
+}
+
+.content-assign-finalbox-title {
+	text-align: center;
+	display: block;
+	width: 100%;
+	font-size: 32px;
+	font-weight: 700;
+}
+
+.content-assign-finalbox-sub {
+	text-align: center;
+	display: block;
+	width: 100%;
+	font-size: 15px;
+	font-weight: 600;
+	margin-top: 18px;
+}
+
+.content-assign-finalbox-middle {
+	text-align: center;
+	display: block;
+	width: 100%;
+	font-size: 15px;
+	margin-top: 28px;
+	line-height: 31px;
+	font-weight: 300;
+}
+
+.content-assign-finalbox-middledark {
+	text-align: center;
+	display: block;
+	width: 100%;
+	font-size: 15px;
+	font-weight: 800;
+	margin-top: 26px;
+}
+
+.content-assign-finalbox-bottom {
+	text-align: center;
+	display: block;
+	width: 100%;
+	font-size: 15px;
+	font-style: italic;
+	margin-top: 9px;
+	font-weight: 100;
+}
+
+.content-assign-finalbox-button {
+	display: block;
+	width: 215px;
+	height: 40px;
+	background: #3366FF;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 14px;
+	line-height: 40px;
+	margin-top: 29px;
+	border-radius: 4px;
+}
+
+.content-assign-finalbox-return {
+	text-align: center;
+	display: block;
+	width: 100%;
+	font-size: 15px;
+	font-weight: 100;
+	margin-top: 6px;
+	text-decoration: underline;
+}
+
+ul.tabs-switch {
+	float: left;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	margin-top: 20px;
+}
+
+ul.tabs-switch li {
+	float: left;
+	list-style-type: none;
+	width: 171px;
+	font-size: 14px;
+	color: #8F9BB3;
+	border-bottom: 4px solid #8F9BB3;
+	text-align: center;
+	height: 44px;
+	line-height: 44px;
+	font-weight: 600;
+	cursor: pointer;
+	outline: 0;
+}
+
+ul.tabs-switch li.active {
+	color: #3366FF;
+	border-bottom: 4px solid #3366FF;
+}
+
+#allTabsContainer {
+	float: left;
+	width: 100%;
+}
 
 
 
