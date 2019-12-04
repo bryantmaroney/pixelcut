@@ -36,10 +36,10 @@
 			
 			
 			<div id="allTabsContainer">
-				<div class="tab-container" data-tab-index="0">
+				<div class="tab-container" data-tab-index="0" style="display:none;">
 					<?php include('client-dash-content.php');?>
 				</div>
-				<div class="tab-container" data-tab-index="1" style="display:none;">
+				<div class="tab-container" data-tab-index="1">
 					<?php include('client-dash-personas.php');?>
 				</div>
 				<div class="tab-container" data-tab-index="2" style="display:none;">
