@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="10px" viewBox="0 0 15 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>expand-button</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="224" height="50" rx="4"></rect>
+        <filter x="-7.1%" y="-28.0%" width="114.3%" height="164.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0986942745 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Team-Member-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="All-Content" transform="translate(-799.000000, -157.000000)">
+            <g id="Dashboard-Elements"></g>
+            <g id="Filters" transform="translate(272.000000, 136.000000)">
+                <g id="Group-3" transform="translate(336.000000, 0.000000)">
+                    <g id="Background">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="expand-button" transform="translate(191.000000, 21.000000)" fill="#C7CDD9" fill-rule="nonzero">
+                        <polygon id="Path" points="13.25 0.0318627451 7.5 5.78186275 1.75 0.0318627451 0 1.78186275 7.5 9.28186275 15 1.78186275"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

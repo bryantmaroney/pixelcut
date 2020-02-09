@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="18px" viewBox="0 0 24 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>folder-solid</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="240" height="1024"></rect>
+    </defs>
+    <g id="Team-Member-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="All-Content" transform="translate(-13.000000, -127.000000)">
+            <g id="Dashboard-Elements">
+                <g id="BG">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use fill="#D8D8D8" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <g id="Color/White-1" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="nonzero">
+                        <rect id="Rectangle" x="0" y="0" width="240" height="1024"></rect>
+                    </g>
+                </g>
+                <g id="13)-Overflow-Menu/1)-★-+-Text/2)-Default-Middle-┼" transform="translate(0.000000, 112.000000)">
+                    <g id="Setup/Overflow-Menu/1)-Shape/1)-Top-⊤" transform="translate(0.000000, -0.000000)" fill="#FFFFFF">
+                        <path d="M4,0 L236,0 C238.209139,-4.05812251e-16 240,1.790861 240,4 L240,48 L240,48 L0,48 L0,4 C-2.705415e-16,1.790861 1.790861,4.05812251e-16 4,0 Z" id="🎨-Color"></path>
+                    </g>
+                    <g id="folder-solid" transform="translate(13.000000, 15.000000)" fill="#222B45" fill-rule="nonzero">
+                        <path d="M21.75,3 L12.75,3 L9.75,0 L2.25,0 C1.00734375,0 0,1.00734375 0,2.25 L0,15.75 C0,16.9926562 1.00734375,18 2.25,18 L21.75,18 C22.9926562,18 24,16.9926562 24,15.75 L24,5.25 C24,4.00734375 22.9926562,3 21.75,3 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
