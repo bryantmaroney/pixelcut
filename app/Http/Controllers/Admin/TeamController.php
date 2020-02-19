@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\addContent;
 use App\Models\ActivityLog;
 use App\Models\Content;
+use App\Models\Persona;
 use App\Models\Project;
 use App\User;
 use Carbon\Carbon;
@@ -15,13 +16,21 @@ use Illuminate\Support\Facades\Auth;
 class TeamController extends Controller
 {
 
+    public function persona()
+    {
+        return view('theme.admin.persona.client-persona');
+    }
+
     public function addContent()
     {
+        $personas = Persona::all();
         $projects = Project::activeProjects();
         $writers = User::select(['id','first_name','last_name'])->where('is_admin','=',User::Writter)->get();
         return view('theme.admin.content.team-add-content',[
             'projects' => $projects ,
-             'writers' => $writers
+             'writers' => $writers,
+             'personas' => $personas,
+
         ]);
     }
     public function teamDash(Request $request)
@@ -46,6 +55,12 @@ class TeamController extends Controller
 
     public function contentSave(addContent $request)
     {
+        $status = '';
+        if($request->idea != '' ) {
+            $status = Content::STATUS_IDEA;
+        } else {
+            $status = Content::STATUS_WRITING;
+        }
        $content =  Content::create([
             'title'=>$request->title,
             'min_words_count'=>$request->word_count,
@@ -63,7 +78,7 @@ class TeamController extends Controller
             'persona'=>$request->persona,
             'pillar'=>$request->pillar,
             'cluster'=>$request->cluster,
-            'status'=>$request->status,
+            'status'=>$status,
             'project_id'=>$request->project,
             'created_by'=> Auth::user()->id,
             'updated_by'=> Auth::user()->id,
@@ -76,13 +91,15 @@ class TeamController extends Controller
     }
     public function editDash($id)
     {
+        $personas = Persona::all();
         $projects = Project::activeProjects();
         $writers = User::select(['id','first_name','last_name'])->where('is_admin','=',User::Writter)->get();
          $content = Content::where('id','=',$id)->first();
         return view('theme.admin.content.team-edit-dash',[
                'content' =>  $content,
                'projects' => $projects,
-            'writers' => $writers
+               'writers' => $writers,
+               'personas' => $personas,
         ]);
     }
 

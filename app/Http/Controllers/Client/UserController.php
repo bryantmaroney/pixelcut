@@ -17,9 +17,10 @@ class UserController extends Controller
 
     public function contentAssigment($id)
     {
-        $content = Content::with('project')->where('id','=',$id)->first();
+        $content = Content::with('project','article')->where('id','=',$id)->first();
         return view('theme.client.content.content-assignment',[
             'content' =>  $content,
+            'article' => $content->article->first()
         ]);
     }
 

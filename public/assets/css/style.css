@@ -863,7 +863,7 @@ input.addcontent-wordcount {
     background: #FFFFFF;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
     border-radius: 4px;
-    padding: 24px;
+    padding: 22px;
     margin-top: 30px;
 }
 
@@ -953,7 +953,7 @@ input.addcontent-wordcount {
     padding: 24px;
     margin-top: 30px;
     margin-left: 27px;
-    min-height: 214px;
+    min-height: 267px;
 }
 
 .team-addcontent-leftkeywords {
@@ -1059,6 +1059,7 @@ input.addcontent-wordcount {
     border-radius: 4px;
     padding: 24px;
     margin-top: 30px;
+	margin-right: 160px;
 }
 
 .team-addcontent-publish div {
@@ -1119,7 +1120,7 @@ input.addcontent-wordcount {
     border-radius: 4px;
     padding: 24px;
     margin-top: 30px;
-    margin-left: 27px;
+    margin-left: -135px;
 }
 
 .team-addcontent-publishpage div label {

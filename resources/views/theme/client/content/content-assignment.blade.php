@@ -38,6 +38,7 @@
 				@csrf
 				<input type="hidden" name="contentId" value="{{$content->id}}">
 				<input type="hidden" name="projectId" value="{{$content->project->id}}">
+				<input type="hidden" name="article" value="{{$article->article}}">
 				<div class="content-assign-topbox">
 					<ul>
 						<li>

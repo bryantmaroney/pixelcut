@@ -2,22 +2,38 @@
     <table class="table table-striped">
         <thead>
         <tr class="customTheadTr">
-            <th scope="col">Persona Name</th>
+            <th scope="col" style="width: 508px">Persona Name</th>
             <th scope="col">Date Added</th>
-            <th scope="col">Action</th>
+            <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody>
 
-        <tr>
-            <td>The Teacher</td>
-            <td>10/2/2018</td>
-            <td>
-                <div class="dash-page-listactions">VIEW</div>
-            </td>
-        </tr>
+        @foreach($Contents as $k => $v)
+            <tr>
+                <td>{{$v->persona_rel->persona_name}}</td>
+                <td>{{\Carbon\Carbon::parse($v->creatd_at)->toDateString()}}</td>
+                <td>
+                    <a href="{{route('editPersona',$v->persona_rel->id)}}"  class="dash-page-listactions ml-1" style="margin-top: 4px">VIEW & EDIT</a>
+                    <a href="{{route('deletePersona',$v->persona_rel->id)}}"  class="dash-page-listactions ml-1" style="margin-top: 4px"> DELETE</a>
+                </td>
+            </tr>
+            @endforeach
         </tbody>
     </table>
+
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="#">Add New Persona</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+{{--    </div>--}}
+
 {{--	<ul class="dash-page-listtitles dash-list-personas">--}}
 {{--		<li>Persona Name</li>--}}
 {{--		<li>Date Added</li>--}}

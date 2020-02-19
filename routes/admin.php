@@ -2,6 +2,7 @@
 
 Route::group(['prefix' => 'admin','middleware' => 'admin', 'namespace' => 'Admin'], function () {
 
+    Route::get('/persona', 'TeamController@persona');
     Route::get('/', 'TeamController@teamDash')->name('team-dash');
     Route::get('/team-add-content', 'TeamController@addContent')->name('team-add-content');
     Route::post('/content-save', 'TeamController@contentSave')->name('contentSave');
@@ -23,6 +24,13 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'namespace' => 'Admin
     Route::get('/project-status/{id}/{bit}', 'ProjectController@changeStatus')->name('changeStatus');
     Route::get('/edit-project/{id}', 'ProjectController@editProject')->name('editProject');
     Route::post('/update-project', 'ProjectController@updateProject')->name('updateProject');
+    //persona routes
+    Route::get('/add-new-persona', 'PersonaController@newPersona')->name('add-persona');
+    Route::post('persona-save', 'PersonaController@savePersona')->name('savePersona');
+    Route::get('/persona-edit/{id}', 'PersonaController@editPersona')->name('editPersona');
+    Route::get('/persona-delete/{id}', 'PersonaController@deletePersona')->name('deletePersona');
+    Route::post('persona-update', 'PersonaController@UpdatePersona')->name('UpdatePersona');
+    Route::get('/list-persona', 'PersonaController@listPersona')->name('list-Persona');
 
 
 

@@ -58,57 +58,78 @@
 						<input type="number" class="addcontent-wordcount" name="word_count" value="{{old('word_count')}}">
 					</div>
 				</div>
+
 				<div class="team-addcontent-typebox">
 					<div class="team-addcontent-typetitle">CONTENT TYPE*</div>
 					<div>
 						<input type="radio" name="content_type" id="radio1" value="1"  {{old('content_type') == 1 ? 'checked' : ''}} class="css-checkbox" />
 						<label for="radio1" class="css-label radGroup1"></label>
-						<div class="typebox-radiotitle">Standard Blog Post</div>
+						<div class="typebox-radiotitle">Blog Post</div>
 					</div>
 					<div>
 						<input type="radio" name="content_type" id="radio2" value="2" {{old('content_type') == 2 ? 'checked' : ''}}  class="css-checkbox" />
 						<label for="radio2" class="css-label radGroup2"></label>
-						<div class="typebox-radiotitle">Product Page</div>
+						<div class="typebox-radiotitle">Podcast</div>
 					</div>
 					<div>
 						<input type="radio" name="content_type" id="radio3" value="3"  {{old('content_type') == 3 ? 'checked' : ''}}   class="css-checkbox" />
 						<label for="radio3" class="css-label radGroup3"></label>
-						<div class="typebox-radiotitle">Product Category Page</div>
+						<div class="typebox-radiotitle">Product Category</div>
 					</div>
 					<div>
 						<input type="radio" name="content_type" id="radio4" value="4"  {{old('content_type') == 4 ? 'checked' : ''}}   class="css-checkbox" />
 						<label for="radio4" class="css-label radGroup4"></label>
-						<div class="typebox-radiotitle">Resource/Guide</div>
+						<div class="typebox-radiotitle">Resource Guide<</div>
 					</div>
 					<div>
 						<input type="radio" name="content_type" id="radio5" value="5"  {{old('content_type') == 5 ? 'checked' : ''}}   class="css-checkbox" />
 						<label for="radio5" class="css-label radGroup5"></label>
-						<div class="typebox-radiotitle">Service Landing Page</div>
+						<div class="typebox-radiotitle">Facebook Ad</div>
 					</div>
 					<div>
 						<input type="radio" name="content_type" id="radio6" value="6" {{old('content_type') == 6 ? 'checked' : ''}}    class="css-checkbox" />
 						<label for="radio6" class="css-label radGroup6"></label>
-						<div class="typebox-radiotitle">Sales Page</div>
+						<div class="typebox-radiotitle">Product Page</div>
 					</div>
 					<div>
 						<input type="radio" name="content_type" id="radio7" value="7" {{old('content_type') == 7 ? 'checked' : ''}}    class="css-checkbox" />
 						<label for="radio7" class="css-label radGroup7"></label>
-						<div class="typebox-radiotitle">Whitepaper</div>
+						<div class="typebox-radiotitle">Infographic</div>
 					</div>
 					<div>
 						<input type="radio" name="content_type" id="radio8"  value="8" {{old('content_type') == 8 ? 'checked' : ''}}   class="css-checkbox" />
 						<label for="radio8" class="css-label radGroup8"></label>
-						<div class="typebox-radiotitle">Wiki Article</div>
+						<div class="typebox-radiotitle">Instagram Post</div>
 					</div>
 					<div>
 						<input type="radio" name="content_type" id="radio9" value="9" {{old('content_type') == 9 ? 'checked' : ''}}    class="css-checkbox" />
 						<label for="radio9" class="css-label radGroup9"></label>
-						<div class="typebox-radiotitle">Infographic</div>
+						<div class="typebox-radiotitle">Local Lander</div>
 					</div>
 					<div>
 						<input type="radio" name="content_type" id="radio10"  value="10"  {{old('content_type') == 10 ? 'checked' : ''}}  class="css-checkbox" />
 						<label for="radio10" class="css-label radGroup10"></label>
-						<div class="typebox-radiotitle">Something Else</div>
+						<div class="typebox-radiotitle">White Paper</div>
+					</div>
+					<div>
+						<input type="radio" name="content_type" id="radio11" value="11" {{old('content_type') == 11 ? 'checked' : ''}}    class="css-checkbox" />
+						<label for="radio11" class="css-label radGroup7"></label>
+						<div class="typebox-radiotitle">Short Video</div>
+					</div>
+					<div>
+						<input type="radio" name="content_type" id="radio12"  value="12" {{old('content_type') == 12 ? 'checked' : ''}}   class="css-checkbox" />
+						<label for="radio12" class="css-label radGroup8"></label>
+						<div class="typebox-radiotitle">Services Lander</div>
+					</div>
+					<div>
+						<input type="radio" name="content_type" id="radio13" value="13" {{old('content_type') == 13 ? 'checked' : ''}}    class="css-checkbox" />
+						<label for="radio13" class="css-label radGroup9"></label>
+						<div class="typebox-radiotitle">Long Video</div>
+					</div>
+					<div>
+						<input type="radio" name="content_type" id="radio14"  value="14"  {{old('content_type') == 14 ? 'checked' : ''}}  class="css-checkbox" />
+						<label for="radio14" class="css-label radGroup10"></label>
+						<div class="typebox-radiotitle">Sales Page</div>
 					</div>
 				</div>
 
@@ -117,10 +138,19 @@
 						<div>
 							<label>CONTENT TACTIC</label>
 							<select name="tatic">
-								<option value="1" {{old('tatic') == 1 ? 'selected' : ''}}>Volvo</option>
-								<option value="2" {{old('tatic') == 2 ? 'selected' : ''}}>Saab</option>
-								<option value="3" {{old('tatic') == 3 ? 'selected' : ''}}>Mercedes</option>
-								<option value="4" {{old('tatic') == 4 ? 'selected' : ''}}>Audi</option>
+								<option value="1" {{old('tatic') == 1 ? 'selected' : ''}}>Comparison Guide</option>
+								<option value="2" {{old('tatic') == 2 ? 'selected' : ''}}>Gated Content</option>
+								<option value="3" {{old('tatic') == 3 ? 'selected' : ''}}>Interview</option>
+								<option value="4" {{old('tatic') == 4 ? 'selected' : ''}}>Curated Roundup</option>
+								<option value="5" {{old('tatic') == 5 ? 'selected' : ''}}>Graphic</option>
+								<option value="6" {{old('tatic') == 6 ? 'selected' : ''}}>Short Video</option>
+								<option value="7" {{old('tatic') == 7 ? 'selected' : ''}}>Expert Guide</option>
+								<option value="8" {{old('tatic') == 8 ? 'selected' : ''}}>Hub Post</option>
+								<option value="9" {{old('tatic') == 9 ? 'selected' : ''}}>Spoke Post</option>
+								<option value="10" {{old('tatic') == 10 ? 'selected' : ''}}>Expert Roundup</option>
+								<option value="11" {{old('tatic') == 11 ? 'selected' : ''}}>Infographic</option>
+								<option value="12" {{old('tatic') == 12 ? 'selected' : ''}}>Template</option>
+								<option value="13" {{old('tatic') == 13 ? 'selected' : ''}}>Tool</option>
 							</select>
 						</div>
 						<div>
@@ -193,10 +223,9 @@
 					<div>
 						<label>PERSONA</label>
 						<select name="persona">
-							<option value="1" {{old('persona') == 1 ? 'selected' : ''}}>Volvo</option>
-							<option value="2" {{old('persona') == 2 ? 'selected' : ''}}>Saab</option>
-							<option value="3" {{old('persona') == 3 ? 'selected' : ''}}>Mercedes</option>
-							<option value="4" {{old('persona') == 4 ? 'selected' : ''}}>Audi</option>
+							@foreach($personas as $k => $v)
+								<option value="{{$v->id}}" {{old('persona') == $v->id? 'selected' : ''}} >{{$v->persona_name}}</option>
+							@endforeach
 						</select>
 					</div>
 					<div>

@@ -2,22 +2,31 @@
 	<table class="table table-striped">
 		<thead>
 		<tr class="customTheadTr">
-			<th scope="col">Persona Name</th>
+			<th scope="col" style="width: 508px">Persona Name</th>
 			<th scope="col">Date Added</th>
-			<th scope="col">Action</th>
 		</tr>
 		</thead>
 		<tbody>
-
 		<tr>
 			<td>The Teacher</td>
 			<td>10/2/2018</td>
-			<td>
-				<div class="dash-page-listactions">VIEW</div>
-			</td>
+		</tr>
+		<tr>
+			<td>The Teacher</td>
+			<td>10/2/2018</td>
 		</tr>
 		</tbody>
 	</table>
+
+{{--	<table class="table table-striped">--}}
+{{--		<tbody>--}}
+{{--		<tr>--}}
+{{--			<td>--}}
+{{--				<a href="#">Add New Persona</a>--}}
+{{--			</td>--}}
+{{--		</tr>--}}
+{{--		</tbody>--}}
+{{--	</table>--}}
 {{--	<ul class="dash-page-listtitles dash-list-personas">--}}
 {{--		<li>Persona Name</li>--}}
 {{--		<li>Date Added</li>--}}

@@ -135,7 +135,7 @@ class ProjectController extends Controller
         $clients = $project->clients;
         $clientNames = implode(',', $clients->pluck('user_name')->toArray());
         $users = $projectManagers->pluck('user_name');
-        $contents = Content::where('project_id', '=', $id)->get();
+        $contents = Content::whereHas('persona_rel')->where('project_id', '=', $id)->get();
         return view('theme.admin.projects.editProject', [
             'project' => $project,
             'projectManagers' => $projectManagers,

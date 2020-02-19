@@ -18,6 +18,7 @@ class ContentController extends Controller
 
     public function contentReviewSave(addAtricle $request)
     {
+        $this->updateStatus($request->contentId , $request->draft);
         $article = Article::create([
             'user_id' => Auth::user()->id,
             'article' => $request->article,
@@ -29,7 +30,20 @@ class ContentController extends Controller
             'article_id' => $article->id,
         ]);
 
-        return redirect()->route('writter-dash')->with('success','content updated......');
+        return redirect()->route('client-dash')->with('success','content updated......');
+    }
+
+    public function updateStatus($contentId,$draft){
+        $status = '';
+        $checkStatus = isset($draft) ? Article::DRAFT : Article::PUBLISH;
+        if($checkStatus == Article::PUBLISH) {
+            $status = Content::STATUS_READY_TO_PUBLISH;
+        } else {
+            $status = Content::STATUS_CLIENT_REVIEWING;
+        }
+        return Content::where('id','=',$contentId)->update([
+           'status' => $status
+        ]);
     }
 
 //    public function editDash($id)

@@ -57,56 +57,75 @@
 				</div>
 				<div class="team-addcontent-typebox">
 					<div class="team-addcontent-typetitle">CONTENT TYPE*</div>
-
 					<div>
-						<input type="radio" name="content_type" id="radio1" value="1" @if($content->content_type == 1) checked @endif class="css-checkbox" />
-		               <label for="radio1" class="css-label radGroup1"></label>
-		               <div class="typebox-radiotitle">Standard Blog Post</div>
+						<input type="radio" name="content_type" id="radio1" value="1"  @if($content->content_type == 1) checked @endif class="css-checkbox" />
+						<label for="radio1" class="css-label radGroup1"></label>
+						<div class="typebox-radiotitle">Blog Post</div>
 					</div>
 					<div>
-						<input type="radio" name="content_type" id="radio2" value="2"@if($content->content_type == 2) checked @endif class="css-checkbox" />
-		               <label for="radio2" class="css-label radGroup2"></label>
-		               <div class="typebox-radiotitle">Product Page</div>
+						<input type="radio" name="content_type" id="radio2" value="2" @if($content->content_type == 2) checked @endif class="css-checkbox" />
+						<label for="radio2" class="css-label radGroup2"></label>
+						<div class="typebox-radiotitle">Podcast</div>
 					</div>
 					<div>
-						<input type="radio" name="content_type" id="radio3" value="3"@if($content->content_type == 3) checked @endif class="css-checkbox" />
-		               <label for="radio3" class="css-label radGroup3"></label>
-		               <div class="typebox-radiotitle">Product Category Page</div>
+						<input type="radio" name="content_type" id="radio3" value="3"  @if($content->content_type == 3) checked @endif class="css-checkbox" />
+						<label for="radio3" class="css-label radGroup3"></label>
+						<div class="typebox-radiotitle">Product Category</div>
 					</div>
 					<div>
-						<input type="radio" name="content_type" id="radio4" value="4"@if($content->content_type == 4) checked @endif class="css-checkbox" />
-		               <label for="radio4" class="css-label radGroup4"></label>
-		               <div class="typebox-radiotitle">Resource/Guide</div>
+						<input type="radio" name="content_type" id="radio4" value="4"  @if($content->content_type == 4) checked @endif  class="css-checkbox" />
+						<label for="radio4" class="css-label radGroup4"></label>
+						<div class="typebox-radiotitle">Resource Guide</div>
 					</div>
 					<div>
-						<input type="radio" name="content_type" id="radio5" value="5"@if($content->content_type == 5) checked @endif class="css-checkbox" />
-		               <label for="radio5" class="css-label radGroup5"></label>
-		               <div class="typebox-radiotitle">Service Landing Page</div>
+						<input type="radio" name="content_type" id="radio5" value="5"  @if($content->content_type == 5) checked @endif  class="css-checkbox" />
+						<label for="radio5" class="css-label radGroup5"></label>
+						<div class="typebox-radiotitle">Facebook Ad</div>
 					</div>
 					<div>
-						<input type="radio" name="content_type" id="radio6" value="6"@if($content->content_type == 6) checked @endif class="css-checkbox" />
-		               <label for="radio6" class="css-label radGroup6"></label>
-		               <div class="typebox-radiotitle">Sales Page</div>
+						<input type="radio" name="content_type" id="radio6" value="6" @if($content->content_type == 6) checked @endif    class="css-checkbox" />
+						<label for="radio6" class="css-label radGroup6"></label>
+						<div class="typebox-radiotitle">Product Page</div>
 					</div>
 					<div>
-						<input type="radio" name="content_type" id="radio7" value="7"@if($content->content_type == 7) checked @endif class="css-checkbox" />
-		               <label for="radio7" class="css-label radGroup7"></label>
-		               <div class="typebox-radiotitle">Whitepaper</div>
+						<input type="radio" name="content_type" id="radio7" value="7" @if($content->content_type == 7) checked @endif    class="css-checkbox" />
+						<label for="radio7" class="css-label radGroup7"></label>
+						<div class="typebox-radiotitle">Infographic</div>
 					</div>
 					<div>
-						<input type="radio" name="content_type" id="radio8" value="8"@if($content->content_type == 8) checked @endif class="css-checkbox" />
-		               <label for="radio8" class="css-label radGroup8"></label>
-		               <div class="typebox-radiotitle">Wiki Article</div>
+						<input type="radio" name="content_type" id="radio8"  value="8" @if($content->content_type == 8) checked @endif   class="css-checkbox" />
+						<label for="radio8" class="css-label radGroup8"></label>
+						<div class="typebox-radiotitle">Instagram Post</div>
 					</div>
 					<div>
-						<input type="radio" name="content_type" id="radio9"  value="9"@if($content->content_type == 9) checked @endif class="css-checkbox" />
-		               <label for="radio9" class="css-label radGroup9"></label>
-		               <div class="typebox-radiotitle">Infographic</div>
+						<input type="radio" name="content_type" id="radio9" value="9" @if($content->content_type == 9) checked @endif    class="css-checkbox" />
+						<label for="radio9" class="css-label radGroup9"></label>
+						<div class="typebox-radiotitle">Local Lander</div>
 					</div>
 					<div>
-						<input type="radio" name="content_type" id="radio10" value="10"@if($content->content_type == 10) checked @endif class="css-checkbox" />
-		               <label for="radio10" class="css-label radGroup10"></label>
-		               <div class="typebox-radiotitle">Something Else</div>
+						<input type="radio" name="content_type" id="radio10"  value="10"  @if($content->content_type == 10) checked @endif  class="css-checkbox" />
+						<label for="radio10" class="css-label radGroup10"></label>
+						<div class="typebox-radiotitle">White Paper</div>
+					</div>
+					<div>
+						<input type="radio" name="content_type" id="radio11" value="11" @if($content->content_type == 11) checked @endif    class="css-checkbox" />
+						<label for="radio11" class="css-label radGroup7"></label>
+						<div class="typebox-radiotitle">Short Video</div>
+					</div>
+					<div>
+						<input type="radio" name="content_type" id="radio12"  value="12" @if($content->content_type == 12) checked @endif   class="css-checkbox" />
+						<label for="radio12" class="css-label radGroup8"></label>
+						<div class="typebox-radiotitle">Services Lander</div>
+					</div>
+					<div>
+						<input type="radio" name="content_type" id="radio13" value="13" @if($content->content_type == 13) checked @endif    class="css-checkbox" />
+						<label for="radio13" class="css-label radGroup9"></label>
+						<div class="typebox-radiotitle">Long Video</div>
+					</div>
+					<div>
+						<input type="radio" name="content_type" id="radio14"  value="14"  @if($content->content_type == 14) checked @endif  class="css-checkbox" />
+						<label for="radio14" class="css-label radGroup10"></label>
+						<div class="typebox-radiotitle">Sales Page</div>
 					</div>
 				</div>
 
@@ -115,10 +134,19 @@
 						<div>
 							<label>CONTENT TACTIC</label>
 							<select name="tatic">
-								<option value="1" @if($content->content_tactic == 1) selected @endif>Volvo</option>
-								<option value="2" @if($content->content_tactic == 2) selected @endif>Saab</option>
-								<option value="3" @if($content->content_tactic == 3) selected @endif>Mercedes</option>
-								<option value="4" @if($content->content_tactic == 4) selected @endif>Audi</option>
+								<option value="1" @if($content->content_tactic == 1) selected @endif>Comparison Guide</option>
+								<option value="2" @if($content->content_tactic == 2) selected @endif>Gated Content</option>
+								<option value="3" @if($content->content_tactic == 3) selected @endif>Interview</option>
+								<option value="4" @if($content->content_tactic == 4) selected @endif>Curated Roundup</option>
+								<option value="5" @if($content->content_tactic == 5) selected @endif>Graphic</option>
+								<option value="6" @if($content->content_tactic == 6) selected @endif>Short Video</option>
+								<option value="7" @if($content->content_tactic == 7) selected @endif>Expert Guide</option>
+								<option value="8" @if($content->content_tactic == 8) selected @endif>Hub Post</option>
+								<option value="9" @if($content->content_tactic == 9) selected @endif>Spoke Post</option>
+								<option value="10" @if($content->content_tactic == 10) selected @endif>Expert Roundup</option>
+								<option value="11" @if($content->content_tactic == 11) selected @endif>Infographic</option>
+								<option value="12" @if($content->content_tactic == 12) selected @endif>Template</option>
+								<option value="13" @if($content->content_tactic == 13) selected @endif>Tool</option>
 							</select>
 						</div>
 						<div>
@@ -191,10 +219,10 @@
 					<div>
 						<label>PERSONA</label>
 						<select name="persona">
+							@foreach($personas as $k => $v)
+								<option value="{{$v->id}}" @if($v->id == $content->persona) selected @endif>{{$v->persona_name}}</option>
+							@endforeach
 							<option value="1" @if($content->persona == 1) selected @endif >Volvo</option>
-							<option value="2" @if($content->persona == 2) selected @endif >Saab</option>
-							<option value="3" @if($content->persona == 3) selected @endif >Mercedes</option>
-							<option value="4" @if($content->persona == 4) selected @endif >Audi</option>
 						</select>
 					</div>
 					<div>

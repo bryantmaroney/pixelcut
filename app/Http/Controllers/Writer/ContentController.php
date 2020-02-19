@@ -37,7 +37,7 @@ class ContentController extends Controller
         $content = Content::with('project', 'article')->where('id','=',$id)->first();
         return view('theme.writter.content.content-assignment',[
             'content' =>  $content,
-            'article' => $content->article->first()->article
+            'article' => isset($content->article->first()->article) ? $content->article->first()->article :''
         ]);
     }
 

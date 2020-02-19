@@ -7,6 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Content extends Model
 {
+    const STATUS_DEFAULT = 0;
+    const STATUS_TOPIC_PROPOSED = 1;
+    const STATUS_TOPIC_APPROVED = 2;
+    const STATUS_WRITING = 3;
+    const STATUS_CLIENT_REVIEWING = 4;
+    const STATUS_READY_TO_REVIEW = 5;
+    const STATUS_READY_TO_PUBLISH = 6;
+    const STATUS_PUBLISH = 7;
+    const STATUS_IDEA = 8;
+    const STATUS_ASSIGN_TO_WRITER = 9;
+
+
     protected $fillable = [
         'title',
         'min_words_count',
@@ -80,34 +92,46 @@ class Content extends Model
     {
         switch ($this->content_type) {
             case 1:
-                $status = 'Standard Blog Post';
+                $status = 'Blog Post';
                 break;
             case 2:
-                $status = 'Product Page';
+                $status = 'Podcast';
                 break;
             case 3:
-                $status = 'Product Category Page';
+                $status = 'Product Category';
                 break;
             case 4:
-                $status = 'Resource/Guide<';
+                $status = 'Resource Guide';
                 break;
             case 5:
-                $status = 'Service Landing Page';
+                $status = 'Facebook Ad';
                 break;
             case 6:
-                $status = 'Sales Page';
+                $status = 'Product Page';
                 break;
             case 7:
-                $status = 'White paper';
-                break;
-            case 8:
-                $status = 'Wiki Article';
-                break;
-            case 9:
                 $status = 'Infographic';
                 break;
+            case 8:
+                $status = 'Instagram Post';
+                break;
+            case 9:
+                $status = 'Local Lander';
+                break;
             case 10:
-                $status = 'Something Else';
+                $status = 'White Paper';
+                break;
+            case 11:
+                $status = 'Short Video';
+                break;
+            case 12:
+                $status = 'Services Lander';
+                break;
+            case 13:
+                $status = 'Long Video';
+                break;
+            case 14:
+                $status = 'Sales Page';
                 break;
             default:
                 $status = '-';
@@ -119,16 +143,43 @@ class Content extends Model
     {
         switch ($this->content_tactic) {
             case 1:
-                $status = 'Volvo';
+                $status = 'Comparison Guide';
                 break;
             case 2:
-                $status = 'Saab';
+                $status = 'Gated Content';
                 break;
             case 3:
-                $status = 'Mercedes';
+                $status = 'Interview';
                 break;
             case 4:
-                $status = 'Audi';
+                $status = 'Curated Roundup';
+                break;
+            case 5:
+                $status = 'Graphic';
+                break;
+            case 6:
+                $status = 'Short Video';
+                break;
+            case 7:
+                $status = 'Expert Guide';
+                break;
+            case 8:
+                $status = 'Hub Post';
+                break;
+            case 9:
+                $status = 'Spoke Post';
+                break;
+            case 10:
+                $status = 'Expert Roundup';
+                break;
+            case 11:
+                $status = 'Infographic';
+                break;
+            case 12:
+                $status = 'Template';
+                break;
+            case 13:
+                $status = 'Tool';
                 break;
             default:
                 $status = '-';
@@ -207,6 +258,11 @@ class Content extends Model
     public function writer()
     {
         return $this->belongsTo(User::class,'writer_id','id');
+    }
+
+    public function persona_rel()
+    {
+        return $this->belongsTo(Persona::class,'persona','id');
     }
 
     public function article()

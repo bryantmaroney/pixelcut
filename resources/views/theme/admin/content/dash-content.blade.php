@@ -25,7 +25,7 @@
                 <td>{{$v->project->project_name}}</td>
                 <td class=" @if($v->status_name == 'Publish') badge-proposed @elseif($v->status_name == 'Client Reviewing') badge-proposed @elseif($v->status_name == 'Topic Proposed') badge-proposed @elseif($v->status_name == 'Topic Approved') badge-approved @elseif($v->status_name == 'Writing') badge-write @elseif($v->status_name == 'Ready To Review') badge-ready @elseif($v->status_name == 'Ready To Publish') badge-published @endif ">{{$v->status_name}}</td>
                 <td>
-                    <a  class="dash-page-listactions" href="/admin/team-edit-content/{{$v->id}}">Edit</a>
+                    <a  class="dash-page-listactions" href="/admin/team-edit-content/{{$v->id}}" style="margin-top: 4px">Edit</a>
                 </td>
             </tr>
         @endforeach
