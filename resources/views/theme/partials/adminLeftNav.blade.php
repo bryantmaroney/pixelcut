@@ -12,8 +12,8 @@
         <li onclick="window.location.href='{{route('list-users')}}'" @if(\Request::route()->getName() == 'list-users') class="active" @elseif(\Request::route()->getName() == 'add-user') class="active" @elseif(\Request::route()->getName() == 'editUser') class="active"  @endif>
             <span class="usericon"></span> Users
         </li>
-        <li onclick="window.location.href='{{route('list-Persona')}}'" @if(\Request::route()->getName() == 'list-Persona') class="active" @elseif(\Request::route()->getName() == 'add-persona') class="active" @elseif(\Request::route()->getName() == 'editPersona') class="active"  @endif>
-            <span class="usericon"></span> Personas
-        </li>
+{{--        <li onclick="window.location.href='{{route('list-Persona')}}'" @if(\Request::route()->getName() == 'list-Persona') class="active" @elseif(\Request::route()->getName() == 'add-persona') class="active" @elseif(\Request::route()->getName() == 'editPersona') class="active"  @endif>--}}
+{{--            <span class="usericon"></span> Personas--}}
+{{--        </li>--}}
     </ul>
 </div>

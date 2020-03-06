@@ -55,6 +55,11 @@ class Project extends Model
         return $this->belongsToMany(User::class,ProjectContact::class, 'project_id', 'project_contact_id');
     }
 
+    public function personas()
+    {
+        return $this->belongsToMany(Persona::class,ProjectPersona::class, 'project_id', 'persona_id');
+    }
+
     public static function activeProjects(){
         return  Project::select(['id','project_name'])->where('status','=',Project::ACTIVE)->get();
     }

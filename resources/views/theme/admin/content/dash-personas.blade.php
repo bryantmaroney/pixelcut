@@ -8,17 +8,23 @@
         </tr>
         </thead>
         <tbody>
-
-        @foreach($Contents as $k => $v)
-            <tr>
-                <td>{{$v->persona_rel->persona_name}}</td>
-                <td>{{\Carbon\Carbon::parse($v->creatd_at)->toDateString()}}</td>
-                <td>
-                    <a href="{{route('editPersona',$v->persona_rel->id)}}"  class="dash-page-listactions ml-1" style="margin-top: 4px">VIEW & EDIT</a>
-                    <a href="{{route('deletePersona',$v->persona_rel->id)}}"  class="dash-page-listactions ml-1" style="margin-top: 4px"> DELETE</a>
-                </td>
-            </tr>
+        @if(!is_null($persona))
+            @if(count($persona) < 1)
+                <tr class="customTrStyle">
+                    <td colspan="7">No Record Found</td>
+                </tr>
+            @endif
+            @foreach($persona as $k => $v)
+                <tr>
+                    <td>{{$v->persona_name}}</td>
+                    <td>{{\Carbon\Carbon::parse($v->creatd_at)->toDateString()}}</td>
+                    <td>
+                        <a href="{{route('editPersona',$v->id)}}?project={{$project->id}}"  class="dash-page-listactions ml-1" style="margin-top: 4px">VIEW & EDIT</a>
+                        <a href="{{route('deletePersona',$v->id)}}?project={{$project->id}}"  class="dash-page-listactions ml-1" style="margin-top: 4px"> DELETE</a>
+                    </td>
+                </tr>
             @endforeach
+        @endif
         </tbody>
     </table>
 
@@ -26,7 +32,7 @@
             <tbody>
                 <tr>
                     <td>
-                        <a href="#">Add New Persona</a>
+                        <a href="{{route('add-persona')}}?project={{$project->id}}">Add New Persona</a>
                     </td>
                 </tr>
             </tbody>

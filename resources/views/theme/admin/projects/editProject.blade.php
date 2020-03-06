@@ -10,13 +10,13 @@
                 <li class="tab-switcher c2 @if($tab == 'edit') active @endif" data-tab-index="2" tabindex="0">PROJECT INFO</li>
             </ul>
             <div id="allTabsContainer">
-                <div class="tab-container" data-tab-index="0"  @if($tab == 'edit')  style="display:none;"  @endif>
+                <div class="tab-container" data-tab-index="0"  @if($tab == 'edit') style="display:none;" @elseif($tab == 'persona')  style="display:none;"  @endif>
                     @include('theme.admin.content.dash-content')
                 </div>
-                <div class="tab-container" data-tab-index="1"  style="display:none;">
+                <div class="tab-container" data-tab-index="1" @if($tab == 'edit') style="display:none;" @elseif($tab == 'view')  style="display:none;"  @endif >
                     @include('theme.admin.content.dash-personas')
                 </div>
-                <div class="tab-container" data-tab-index="2" @if($tab == 'view') style="display:none;" @endif>
+                <div class="tab-container" data-tab-index="2" @if($tab == 'view') style="display:none;" @elseif($tab == 'persona')  style="display:none;"  @endif>
                     @include('theme.admin.content.dash-project')
                 </div>
             </div>

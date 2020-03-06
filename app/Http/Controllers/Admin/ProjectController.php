@@ -131,8 +131,11 @@ class ProjectController extends Controller
     public function editProject(Request $request, $id)
     {
         $projectManagers = User::select(['id', 'first_name', 'last_name'])->where('is_admin', '=', User::Client)->get();
-        $project = Project::with('clients')->where('id', '=', $id)->first();
+        $project = Project::with(['clients','personas' => function ($query) {
+            $query->orderBy('id', 'desc');
+        }])->where('id', '=', $id)->first();
         $clients = $project->clients;
+        $persona = $project->personas;
         $clientNames = implode(',', $clients->pluck('user_name')->toArray());
         $users = $projectManagers->pluck('user_name');
         $contents = Content::whereHas('persona_rel')->where('project_id', '=', $id)->get();
@@ -142,7 +145,8 @@ class ProjectController extends Controller
             'clientNames' => $clientNames,
             'users' => $users,
             'Contents' => $contents,
-            'tab' => $request->tab
+            'tab' => $request->tab,
+            'persona' => $persona
         ]);
     }
 
