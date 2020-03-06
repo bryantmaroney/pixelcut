@@ -11,6 +11,9 @@
                     <thead>
                     <tr class="customTheadTr">
                         <th scope="col">Persona Name</th>
+                        <th scope="col">Job</th>
+                        <th scope="col">Career Path</th>
+                        <th scope="col">Family</th>
                         <th scope="col">Date Added</th>
                         <th scope="col">Actions</th>
                     </tr>
@@ -24,6 +27,9 @@
                     @foreach($data as $k => $v)
                         <tr class="customTrStyle">
                             <td >{{$v->persona_name}}</td>
+                            <td >{{$v->job}}</td>
+                            <td >{{$v->career_path}}</td>
+                            <td >{{$v->family}}</td>
                             <td>{{\Carbon\Carbon::parse($v->creatd_at)->toDateString()}}</td>
                             <td>
                                 <div class="btn-group">

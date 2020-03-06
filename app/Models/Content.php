@@ -267,7 +267,7 @@ class Content extends Model
 
     public function article()
     {
-        return $this->belongsToMany(Article::class,'content_articles','article_id', 'article_id');
+        return $this->belongsToMany(Article::class,'content_articles','content_id', 'article_id');
     }
 
 }

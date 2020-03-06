@@ -79,7 +79,7 @@
 					<div>
 						<input type="radio" name="content_type" id="radio4" value="4"  {{old('content_type') == 4 ? 'checked' : ''}}   class="css-checkbox" />
 						<label for="radio4" class="css-label radGroup4"></label>
-						<div class="typebox-radiotitle">Resource Guide<</div>
+						<div class="typebox-radiotitle">Resource Guide</div>
 					</div>
 					<div>
 						<input type="radio" name="content_type" id="radio5" value="5"  {{old('content_type') == 5 ? 'checked' : ''}}   class="css-checkbox" />
