@@ -12,12 +12,19 @@ class ClientController extends Controller
 {
     public function index()
     {
-        $project = (ProjectContact::with('project.clients')->where('project_contact_id', '=', \Auth::user()->id)->first());
+        $project = ProjectContact::with(['project.clients', 'project.personas'])->where('project_contact_id', '=', \Auth::user()->id)->first();
         $project = is_null($project) ? null : $project->project;
-        $contents = Content::where('project_id', '=', $project->id)->get();
+        $persona = isset($project->personas) ? $project->personas : '';
+        if(!is_null($project)) {
+            $contents = Content::where('project_id', '=', $project->id)->get();
+            $clients = $project->clients;
+            $clientNames = implode(',', $clients->pluck('user_name')->toArray());
+        } else {
+            $contents = [];
+            $clients = '';
+            $clientNames = '';
+        }
         $projectManagers = User::select(['id', 'first_name', 'last_name'])->where('is_admin', '=', User::Client)->get();
-        $clients = $project->clients;
-        $clientNames = implode(',', $clients->pluck('user_name')->toArray());
         $users = $projectManagers->pluck('user_name');
 
         return view('theme.client.dashboard.client-dash', [
@@ -26,6 +33,7 @@ class ClientController extends Controller
             'projectManagers' => $projectManagers,
             'clientNames' => $clientNames,
             'users' => $users,
+            'persona' => $persona
         ]);
     }
 }

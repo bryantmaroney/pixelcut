@@ -6,15 +6,19 @@
 			<th scope="col">Date Added</th>
 		</tr>
 		</thead>
-		<tbody>
-		<tr>
-			<td>The Teacher</td>
-			<td>10/2/2018</td>
-		</tr>
-		<tr>
-			<td>The Teacher</td>
-			<td>10/2/2018</td>
-		</tr>
+		@if(!is_null($persona))
+			@if(count($persona) < 1)
+				<tr class="customTrStyle">
+					<td colspan="7">No Record Found</td>
+				</tr>
+			@endif
+			@foreach($persona as $k => $v)
+				<tr>
+					<td>{{$v->persona_name}}</td>
+					<td>{{\Carbon\Carbon::parse($v->creatd_at)->toDateString()}}</td>
+				</tr>
+				@endforeach
+				@endif
 		</tbody>
 	</table>
 
