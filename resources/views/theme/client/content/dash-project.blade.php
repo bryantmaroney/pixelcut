@@ -74,7 +74,7 @@
 
 	<div class="add-project">
 		<label>POINTS OF CONTACT</label>
-		<input type="text" name='user_name' class="tags-look" value="{{$clientNames}}">
+		<input type="text" name='user_name' class="tags-look" value="{{$clientNames}}" readonly>
 {{--		<input type="text" name="user_name" placeholder="Search All Users" value="{{$clientNames}}">--}}
 {{--		<span></span>--}}
 {{--		<ul>--}}
