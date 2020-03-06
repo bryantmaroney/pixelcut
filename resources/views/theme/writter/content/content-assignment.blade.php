@@ -101,7 +101,7 @@
 				</div>
 
 				<div class="textEditor" >
-						<textarea id="summernote" name="article"></textarea>
+					<textarea id="Froala" name="article">{!! $article !!}</textarea>
 				</div>
 
 				<div class="team-addcontent-bottombuttons add-users-bottombuttoms">
@@ -132,7 +132,7 @@
 @push('js')
 	<script>
 		$(document).ready(function() {
-			$('#summernote').summernote('code', '{!! $article !!}');
+			var editor = new FroalaEditor('#Froala')
 		});
 	</script>
 @endpush
