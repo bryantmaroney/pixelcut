@@ -4,9 +4,9 @@ Route::group(['prefix' => 'admin','middleware' => 'admin', 'namespace' => 'Admin
 
     Route::get('/persona', 'TeamController@persona');
     Route::get('/', 'TeamController@teamDash')->name('team-dash');
-    Route::get('/team-add-content', 'TeamController@addContent')->name('team-add-content');
+    Route::get('/add-content', 'TeamController@addContent')->name('team-add-content');
     Route::post('/content-save', 'TeamController@contentSave')->name('contentSave');
-    Route::get('/team-edit-content/{id}', 'TeamController@editDash')->name('team-edit-content');
+    Route::get('/edit-content/{id}', 'TeamController@editDash')->name('team-edit-content');
     Route::post('/content-update', 'TeamController@updateContent')->name('updateContent');
     Route::get('/get-content-log/{id}', 'TeamController@getLog')->name('getLog');
 

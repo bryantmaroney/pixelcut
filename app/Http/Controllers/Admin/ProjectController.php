@@ -41,7 +41,7 @@ class ProjectController extends Controller
 
     public function newProject()
     {
-        $projectManagers = User::where('is_admin', '=', User::Client)->get();
+        $projectManagers = User::where('is_admin', '=', User::Admin)->get();
         $users = User::whereDoesntHave('project')->select(['id', 'first_name', 'last_name'])->where('is_admin', User::Client)->get();
         $usersList = collect();
         foreach ($users as $Key => $user) {
