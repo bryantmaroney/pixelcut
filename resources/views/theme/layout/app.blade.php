@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
 
-    <title>Pixelcut Labs</title>
+    <title>PixelCutLabs® Casper™</title>
 
     {{--<link rel="icon" href="../../images/favicon.png" sizes="24x24" />--}}
     <link rel="icon" href="{{asset('assets/images/favicon.png')}}" sizes="24x24"/>
