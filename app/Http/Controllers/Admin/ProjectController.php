@@ -12,6 +12,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Expr\Array_;
+use Symfony\Component\Console\Input\Input;
 
 class ProjectController extends Controller
 {
@@ -35,7 +36,8 @@ class ProjectController extends Controller
         $projects = $projects->orderBy('id','desc')->paginate(10);
         return view('theme.admin.projects.team-projects', [
             'projects' => $projects,
-            'projectManagers' => $projectManagers
+            'projectManagers' => $projectManagers,
+            'status' => $request->status
         ]);
     }
 
@@ -56,6 +58,9 @@ class ProjectController extends Controller
     public function projectSave(addProject $request)
     {
         $contactId = self::getProjectContactID($request);
+        if (collect($contactId)->isEmpty()){
+               return redirect()->back()->with('error', 'no contact exist in the database...!')->withInput(Input::all());
+           }
         $pillars = self::pillars($request);
         $clusters = self::clusters($request);
         $project = Project::create([
@@ -110,7 +115,9 @@ class ProjectController extends Controller
         foreach ($users_array as $key => $val) {
             $name = explode(' ', $val);
             $user = User::where('first_name', '=', $name[0])->first();
-            array_push($user_ids, $user->id);
+            if (!is_null($user)){
+                array_push($user_ids, $user->id);
+            }
         }
         return $user_ids;
     }
@@ -177,6 +184,14 @@ class ProjectController extends Controller
         return redirect()->route('list-projects')->with('success', 'project updated...!');
     }
 
+    public function getProject($id)
+    {
+       $project = Project::where('id','=',$id)->first();
+       return collect([
+           'project' => $project
+       ]);
+
+    }
 //    public function viewProject($id)
 //    {
 //        $projectManagers = User::select(['id', 'first_name', 'last_name'])->where('is_admin','=',User::Client)->get();

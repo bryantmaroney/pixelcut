@@ -17,6 +17,8 @@ class Content extends Model
     const STATUS_PUBLISH = 7;
     const STATUS_IDEA = 8;
     const STATUS_ASSIGN_TO_WRITER = 9;
+    const DISCARD = 1;
+    const Un_DISCARD = 0;
 
 
     protected $fillable = [
@@ -40,6 +42,7 @@ class Content extends Model
         'project_id',
         'created_by',
         'updated_by',
+        'is_discard'
     ];
 
     protected $appends = [

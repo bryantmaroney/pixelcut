@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\addUser;
 use App\Http\Requests\updateUser;
 use App\Traits\EmailSendTrait;
+use App\Traits\GeneralTarit;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    use EmailSendTrait;
+    use EmailSendTrait,GeneralTarit;
     public function newUser()
     {
         return view('theme.admin.users.add-new-user');
@@ -48,18 +49,48 @@ class UserController extends Controller
     public function insertUser(addUser $request)
     {
         $user = User::where('email', '=', $request->email)->first();
-        if(!is_null($user)){
+        if (!is_null($user)) {
             return redirect()->back()->with('error', 'email address already exist');
         }
-        if (isset($request->buttonType1) && !is_null($request->buttonType1)){
-              User::create($request->all());
-            return redirect()->to(route('list-users'))->with('success', 'User created...!');
-        }
-        if (isset($request->buttonType2) && !is_null($request->buttonType2)){
-            $newUser =  User::create($request->all());
-            self::sendEmail($newUser);
-            return redirect()->to(route('list-users'))->with('success', 'User Created and Send Invitation ...!');
-        }
+        $message = \DB::transaction(function () use($request) {
+            if (isset($request->buttonType1) && !is_null($request->buttonType1)) {
+                $newUser = User::create([
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'email' => $request->email,
+                    'is_admin' => $request->is_admin,
+                    'status' => $request->status,
+                    'password' => bcrypt($request->password)
+                ]);
+                return 'User created...!';
+            } else {
+                $newUser = User::create([
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'email' => $request->email,
+                    'is_admin' => $request->is_admin,
+                    'status' => $request->status,
+                    'password' => bcrypt($request->password),
+                    'token' => self::generateRandomStringWithAlPhabet(10)
+                ]);
+                $link = env('APP_URL').'/setup-pass/'.$newUser->token;
+                $html = view('theme.mail.invite', array('email' => $newUser->email, 'username' => $newUser->first_name,'link' => $link))->render();
+                $email = self::sendPostmarkEmail($request->email,'Pixel Cut Invite',$html);
+                if($email->ErrorCode == 0){
+                    return 'User Created and Send Invitation ...!';
+                } else {
+                    return 'User Created and but email wasn\'t sent...!';
+                }
+            }
+        });
+
+        return redirect()->to(route('list-users'))->with('success', $message);
+
+    }
+
+    public function getV($newUser)
+    {
+        return  view('theme.mail.invite', array('email' => $newUser->email, 'username' => $newUser->first_name));
     }
 
     public function editUser($id)
@@ -112,7 +143,8 @@ class UserController extends Controller
     {
         try {
             $user = User::find($id);
-            self::sendEmail($user);
+            $html = view('theme.mail.invite', array('email' => $user->email, 'username' => $user->first_name))->render();
+            self::sendPostmarkEmail($user->email, 'PixelCut Invitation', $html);
             return redirect()->to(route('list-users'))->with('success', 'Invitation send...!');
         }catch (\Exception $e){
             return redirect()->to(route('list-users'))->with('error', $e->getMessage());

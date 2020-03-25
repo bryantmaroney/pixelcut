@@ -1,4 +1,7 @@
 @extends('theme.layout.app')
+@section('title')
+	Add Project
+@endsection
 @section('content')
 	<style>
 
@@ -31,7 +34,8 @@
 	</style>
 	<div class="dash-contentarea">
 		<div class="dash-contentarea-wrapper">
-			<div class="dash-page-title">Add New Project</div>
+{{--			<div class="dash-page-title">Add New Project</div>--}}
+			<div class="dash-page-title">Team Member Dashboard</div>
 			@if ($errors->any())
 				@foreach ($errors->all() as $error)
 					<script>
@@ -70,8 +74,8 @@
 					<div>
 						<label>Status</label>
 						<select class="addcontent-projectdrop" name="status">
-								<option value="1" {{old('status') == 1 ? 'selected' :''}}>Active</option>
-								<option value="0" {{old('status') == 0 ? 'selected' :''}}>In Active</option>
+								<option value="1" selected >Active</option>
+								<option value="0" >Inactive</option>
 						</select>
 					</div>
 				</div>
@@ -106,8 +110,7 @@
 						<textarea name="clusters" class="textarea">{{old('clusters')}}</textarea>
 					</div>
 				</div>
-
-				<div class="team-addcontent-bottombuttons add-project-bottombuttoms">
+				<div class="team-addcontent-bottombuttons add-project-bottombuttoms" style="	margin-right: 48px;">
 					<div>
 						<input type="submit" value="CREATE PROJECT">
 					</div>

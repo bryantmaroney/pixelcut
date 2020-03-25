@@ -1,7 +1,7 @@
 @extends('theme.layout.app')
-@push('cs')
-
-@endpush
+@section('title')
+	Review Content
+@endsection
 @section('content')
 	<style>
 		.textEditor{
@@ -32,13 +32,14 @@
 	@endif
 	<div class="dash-contentarea">
 		<div class="dash-contentarea-wrapper">
-			<div class="dash-page-title">Review & Approve Content</div>
+{{--			<div class="dash-page-title">Review & Approve Content</div>--}}
+			<div class="dash-page-title">Client Dashboard</div>
 
 			<form method="post" action="{{route('contentReviewSave')}}"><!-- start form -->
 				@csrf
 				<input type="hidden" name="contentId" value="{{$content->id}}">
 				<input type="hidden" name="projectId" value="{{$content->project->id}}">
-				<input type="hidden" name="article" value="{{$article->article}}">
+				<input type="hidden" name="article" value="{{isset($article->article) ? $article->article : ''}}">
 				<div class="content-assign-topbox">
 					<ul>
 						<li>
@@ -93,16 +94,20 @@
 					</ul>
 				</div>
 
-				<div class="content-assign-middlebox">
-					<div>
-						<label>Notes</label>
-						<div>Placeholder for notes from project manager</div>
-					</div>
-				</div>
+{{--				<div class="content-assign-middlebox">--}}
+{{--					<div>--}}
+{{--						<label>Notes</label>--}}
+{{--						<div>Placeholder for notes from project manager</div>--}}
+{{--					</div>--}}
+{{--				</div>--}}
 
 {{--				<div class="textEditor" >--}}
 {{--						<textarea id="summernote" name="article"></textarea>--}}
 {{--				</div>--}}
+
+				<div class="team-addEditor" style="    width: 957px; !important;" >
+					<textarea id="Froala" name="article">{{isset($article->article) ? $article->article :''}}</textarea>
+				</div>
 
 				<div class="team-addcontent-bottombuttons add-users-bottombuttoms">
 					<div>
@@ -120,8 +125,12 @@
 @endsection
 @push('js')
 	<script>
+		// $(document).ready(function() {
+		// 	$('#summernote').summernote();
+		// });
+
 		$(document).ready(function() {
-			$('#summernote').summernote();
+			var editor = new FroalaEditor('#Froala')
 		});
 	</script>
 @endpush

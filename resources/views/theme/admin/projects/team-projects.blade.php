@@ -1,4 +1,7 @@
 @extends('theme.layout.app')
+@section('title')
+    Projects
+@endsection
 @section('content')
     <style>
         ul.team-projects-listtitles li:nth-child(1), ul.team-projects-list li ul li:nth-child(1) {
@@ -10,7 +13,8 @@
     </style>
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
-            <div class="dash-page-title">PROJECTS</div>
+{{--            <div class="dash-page-title">PROJECTS</div>--}}
+            <div class="dash-page-title">Team Member Dashboard</div>
             <div class="dash-page-addcontent" onclick="window.location.href='{{route('add-new-project')}}'">ADD PROJECT <span></span></div>
             <form action="{{route('list-projects')}}" method="get">
                 <div class="dash-page-searcharea">
@@ -30,13 +34,13 @@
                     <div class="dashdropdown-status">
                         <select name="status">
                             <option value="">All Statuses</option>
-                            <option value="1">Active</option>
-                            <option value="0">In Active</option>
+                            <option value="1" @if($status == 1) selected  @endif>Active</option>
+                            <option value="0">Inactive</option>
                         </select>
                         <span></span>
                     </div>
                     <div class="dashdropdown-check">
-                        <input type="checkbox" name="discarded"  value="0"> Show Inactive
+{{--                        <input type="checkbox" name="discarded"  value="0"> Show Inactive--}}
                         <button type="submit" class="dash-page-listactions" style="float: right;     margin-left: 34px;     height: 36px;     margin-top: -4px;  color: white;">Search</button>
                     </div>
                 </div>
@@ -48,7 +52,7 @@
                     <tr class="customTheadTr">
                         <th scope="col">Project Name</th>
                         <th scope="col">Project Manager</th>
-                        <th scope="col">Date Added</th>
+{{--                        <th scope="col">Date Added</th>--}}
                         <th scope="col">Status</th>
                         <th scope="col">In Progress</th>
                         <th scope="col">Actions</th>
@@ -57,24 +61,24 @@
                     <tbody>
                     @if(count($projects) < 1)
                         <tr class="customTrStyle">
-                            <td colspan="6">No Record Found</td>
+                            <td colspan="5">No Record Found</td>
                         </tr>
                     @endif
                     @foreach($projects as $k => $v)
                         <tr class="customTrStyle">
                             <td >{{$v->project_name}}</td>
                             <td>{{$v->projectManager['first_name'] . ' ' . $v->projectManager['last_name'] }}</td>
-                            <td>{{$v->created_at}}</td>
+{{--                            <td>{{$v->created_at}}</td>--}}
                             <td  class="@if($v->status_name == 'Active')badge-active @else badge-proposed @endif" >{{$v->status_name}}</td>
                             <td>{{$v->articles->count()}} Articles</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="{{route('editProject',$v->id)}}?tab=view" class="dash-page-listactions">VIEW</a>
-                                    <a href="{{route('editProject',$v->id)}}?tab=edit"  class="dash-page-listactions ml-1"> EDIT</a>
+                                    <a href="{{route('editProject',$v->id)}}?tab=view" class="dash-page-listactions">View Article</a>
+                                    <a href="{{route('editProject',$v->id)}}?tab=edit"  class="dash-page-listactions ml-1"> Edit Article</a>
                                     @if($v->status == 0)
-                                        <a href="{{route('changeStatus',[$v->id,1])}}"  class="dash-page-listactions ml-1">ACTIVE</a>
+                                        <a href="{{route('changeStatus',[$v->id,1])}}"  class="dash-page-listactions ml-1">Activate</a>
                                     @else
-                                        <a href="{{route('changeStatus',[$v->id,0])}}"  class="dash-page-listactions ml-1">DEACTIVE</a>
+                                        <a href="{{route('changeStatus',[$v->id,0])}}"  class="dash-page-listactions ml-1">Deactivate</a>
                                     @endif
                                 </div>
                             </td>

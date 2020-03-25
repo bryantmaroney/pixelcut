@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
 
-    <title>Pixelcut Labs</title>
+    <title>@yield('title')| Casper</title>
 
     {{--<link rel="icon" href="../../images/favicon.png" sizes="24x24" />--}}
     <link rel="icon" href="{{asset('assets/images/favicon.png')}}" sizes="24x24"/>
@@ -54,6 +54,9 @@
         td.badge-proposed  {
             border-top: 1px solid #8F9BB3 !important;
         }
+        td.badge-In-active  {
+            border-top: 1px solid #8F9BB3 !important;
+        }
         td.badge-write  {
             border-top: 1px solid #222B45 !important;
         }
@@ -87,12 +90,17 @@
         color: #8F9BB3;
         padding-top: 20px;
         padding-bottom: 6px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
     }
     .customTrStyle > td {
         /*border: 0px !important;*/
         padding-bottom: 10px;
-        /*font-size: 13px;*/
-        font-weight: bold;
+        font-size: 13px;
+        font-weight: 600;
+        color: #222B45;
+        font-family: 'Open Sans', sans-serif;
     }
     .btn-group .dash-page-listactions{
         margin-top:4px !important;

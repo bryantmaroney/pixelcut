@@ -1,10 +1,14 @@
 @extends('theme.layout.app')
+@section('title')
+    Contents
+@endsection
 @section('content')
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
-            <div class="dash-page-title">Content</div>
+{{--            <div class="dash-page-title">Content</div>--}}
+            <div class="dash-page-title">Team Member Dashboard</div>
             <div class="dash-page-addcontent" onclick="window.location.href='{{route('team-add-content')}}'">ADD CONTENT <span></span></div>
-            <form action="{{route('team-dash')}}" method="get">
+            <form action="{{route('team-dash')}}" method="get" id="form">
                 <div class="dash-page-searcharea">
                     <div class="dashsearch">
                         <input type="text" name="title" placeholder="Search All Content">
@@ -33,21 +37,29 @@
                         <span></span>
                     </div>
                     <div class="dashdropdown-check">
-                        {{--                        <input type="checkbox" name="discarded" value="discarded"> Place yout text--}}
+                        <input type="checkbox" name="discarded" value="discard" @if($discarded == "discard") checked @endif> Show Discarded
                         <button type="submit" class="dash-page-listactions" style="float: right;     margin-left: 34px;     height: 36px;     margin-top: -4px;  color: white;">Search</button>
                     </div>
                 </div>
             </form>
-            <div class="dash-page-listarea">
+            <div class="dash-page-listarea team-projects-listtitles">
                 <table class="table table-striped">
                     <thead>
                     <tr class="customTheadTr">
-                        <th scope="col">Due Date</th>
+                        @if(isset($desc) && $desc != null && $desc != '')
+                        <th scope="col" onclick="window.location.href='{{route('team-dash',"&asc=asc")}}'" style="cursor: pointer">Due Date
+                            <span class="arrow-up"></span>
+                        </th>
+                        @else
+                            <th scope="col" onclick="window.location.href='{{route('team-dash',"&desc=desc")}}'" style="cursor: pointer">Due Date
+                                <span class="arrow-down"></span>
+                            </th>
+                        @endif
                         <th scope="col">Writer</th>
                         <th scope="col">Title</th>
                         <th scope="col">Project</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -58,13 +70,20 @@
                     @endif
                     @foreach($Contents as $k => $v)
                         <tr class="customTrStyle">
-                            <th scope="row">{{\Carbon\Carbon::parse($v->planned_published_date)->toDateString()}}</th>
+                            <td @if(\Carbon\Carbon::now()->toDateString() == \Carbon\Carbon::parse($v->planned_published_date)->toDateString()) class="text-orange"
+                                @elseif( \Carbon\Carbon::now()->toDateString() > \Carbon\Carbon::parse($v->planned_published_date)->toDateString() ) class="text-red"
+                                @endif>
+                                {{\Carbon\Carbon::parse($v->planned_published_date)->toDateString()}}
+                            </td>
                             <td>{{$v->writer->user_name}}</td>
                             <td>{{$v->title}}</td>
                             <td>{{$v->project->project_name}}</td>
                             <td class=" @if($v->status_name == 'Publish') badge-proposed @elseif($v->status_name == 'Client Reviewing') badge-proposed @elseif($v->status_name == 'Topic Proposed') badge-proposed @elseif($v->status_name == 'Topic Approved') badge-approved @elseif($v->status_name == 'Writing') badge-write @elseif($v->status_name == 'Ready To Review') badge-ready @elseif($v->status_name == 'Ready To Publish') badge-published @elseif($v->status_name == 'Idea') badge-idea @elseif($v->status_name == 'Assign To Writer') badge-approved @endif ">{{$v->status_name}}
                             </td>
                             <td>
+                                @if($v->status_name == 'Idea')
+                                    <a href="" class="dash-page-listactions mr-1" style="margin-top: 4px;">Propose Topic</a>
+                                @endif
                                 <a href="{{route('team-edit-content',$v->id)}}" class="dash-page-listactions" style="margin-top: 4px;">Edit</a>
                             </td>
                         </tr>
@@ -78,169 +97,171 @@
 
 
 
-                {{--                <ul class="dash-page-listtitles">--}}
-                {{--                    <li>Due Date </li>--}}
-                {{--                    <li>Writer</li>--}}
-                {{--                    <li>Title</li>--}}
-                {{--                    <li>Project</li>--}}
-                {{--                    <li>Status</li>--}}
-                {{--                    <li>Actions</li>--}}
-                {{--                </ul>--}}
-                {{--                <ul>--}}
-                {{--                    @if(count($Contents) < 1)--}}
-                {{--                        <li >--}}
-                {{--                            <ul>--}}
-                {{--                                <li style="width:97.8%;">No Record Found</li>--}}
-                {{--                            </ul>--}}
-                {{--                        </li>--}}
-                {{--                    @endif--}}
-                {{--                    @foreach($Contents as $k => $v)--}}
-                {{--                    <li>--}}
-                {{--                        <ul>--}}
-                {{--                            <li class="list-red">{{\Carbon\Carbon::parse($v->planned_published_date)->toDateString()}}</li>--}}
-                {{--                            <li>{{$v->writer->user_name}}</li>--}}
-                {{--                            <li>{{$v->title}}</li>--}}
-                {{--                            <li>{{$v->project->project_name}}</li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-liststatus">{{$v->status_name}}</div>--}}
-                {{--                            </li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-listactions" onclick="window.location.href='{{route('team-edit-content',$v->id)}}'">EDIT</div>--}}
-                {{--                            </li>--}}
-                {{--                        </ul>--}}
-                {{--                    </li>--}}
-                {{--                    @endforeach--}}
-                {{--                </ul>--}}
-                {{--                {{ $Contents->links('vendor.pagination.simple-default') }}--}}
-                {{--                <ul>--}}
-                {{--                    <li>--}}
-                {{--                        <ul>--}}
-                {{--                            <li class="list-red">3 Days Ago</li>--}}
-                {{--                            <li>Not Assigned</li>--}}
-                {{--                            <li>Five Signs You Need a New Water Heater</li>--}}
-                {{--                            <li>Acme Plumbing</li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-liststatus">TOPIC PROPOSED</div>--}}
-                {{--                            </li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-listactions">EDIT</div>--}}
-                {{--                            </li>--}}
-                {{--                        </ul>--}}
-                {{--                    </li>--}}
-                {{--                    <li>--}}
-                {{--                        <ul>--}}
-                {{--                            <li class="list-orange">Due Today</li>--}}
-                {{--                            <li>Not Assigned</li>--}}
-                {{--                            <li>Five Signs You Need a New Water Heater</li>--}}
-                {{--                            <li>Acme Plumbing</li>--}}
-                {{--                            <li class="topic-approved">--}}
-                {{--                                <div class="dash-page-liststatus">TOPIC APPROVED</div>--}}
-                {{--                            </li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-listactions">ASSIGN TO WRITER</div>--}}
-                {{--                            </li>--}}
-                {{--                        </ul>--}}
-                {{--                    </li>--}}
-                {{--                    <li>--}}
-                {{--                        <ul>--}}
-                {{--                            <li>Due Today</li>--}}
-                {{--                            <li>Not Assigned</li>--}}
-                {{--                            <li>Five Signs You Need a New Water Heater</li>--}}
-                {{--                            <li>Acme Plumbing</li>--}}
-                {{--                            <li class="topic-writing">--}}
-                {{--                                <div class="dash-page-liststatus">WRITING</div>--}}
-                {{--                            </li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-listactions">REVIEW</div>--}}
-                {{--                            </li>--}}
-                {{--                        </ul>--}}
-                {{--                    </li>--}}
-                {{--                    <li>--}}
-                {{--                        <ul>--}}
-                {{--                            <li>Due Today</li>--}}
-                {{--                            <li>Not Assigned</li>--}}
-                {{--                            <li>Five Signs You Need a New Water Heater</li>--}}
-                {{--                            <li>Acme Plumbing</li>--}}
-                {{--                            <li class="topic-ready">--}}
-                {{--                                <div class="dash-page-liststatus">READY TO REVIEW</div>--}}
-                {{--                            </li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-listactions">PUBLISH</div>--}}
-                {{--                            </li>--}}
-                {{--                        </ul>--}}
-                {{--                    </li>--}}
-                {{--                    <li>--}}
-                {{--                        <ul>--}}
-                {{--                            <li>Due Today</li>--}}
-                {{--                            <li>Not Assigned</li>--}}
-                {{--                            <li>Five Signs You Need a New Water Heater</li>--}}
-                {{--                            <li>Acme Plumbing</li>--}}
-                {{--                            <li class="topic-reviewing">--}}
-                {{--                                <div class="dash-page-liststatus">CLIENT REVIEWING</div>--}}
-                {{--                            </li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-listactions">RESTORE</div>--}}
-                {{--                            </li>--}}
-                {{--                        </ul>--}}
-                {{--                    </li>--}}
-                {{--                    <li>--}}
-                {{--                        <ul>--}}
-                {{--                            <li>Due Today</li>--}}
-                {{--                            <li>Not Assigned</li>--}}
-                {{--                            <li>Five Signs You Need a New Water Heater</li>--}}
-                {{--                            <li>Acme Plumbing</li>--}}
-                {{--                            <li class="topic-readyview">--}}
-                {{--                                <div class="dash-page-liststatus">READY TO PUBLISH</div>--}}
-                {{--                            </li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-listactions">EDIT</div>--}}
-                {{--                            </li>--}}
-                {{--                        </ul>--}}
-                {{--                    </li>--}}
-                {{--                    <li>--}}
-                {{--                        <ul>--}}
-                {{--                            <li>Due Today</li>--}}
-                {{--                            <li>Not Assigned</li>--}}
-                {{--                            <li>Five Signs You Need a New Water Heater</li>--}}
-                {{--                            <li>Acme Plumbing</li>--}}
-                {{--                            <li class="topic-published">--}}
-                {{--                                <div class="dash-page-liststatus">PUBLISHED</div>--}}
-                {{--                            </li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-listactions">PROPOSE TOPIC</div>--}}
-                {{--                                <div class="dash-page-listactions">EDIT</div>--}}
-                {{--                            </li>--}}
-                {{--                        </ul>--}}
-                {{--                    </li>--}}
-                {{--                    <li>--}}
-                {{--                        <ul>--}}
-                {{--                            <li>Due Today</li>--}}
-                {{--                            <li>Not Assigned</li>--}}
-                {{--                            <li>Five Signs You Need a New Water Heater</li>--}}
-                {{--                            <li>Acme Plumbing</li>--}}
-                {{--                            <li class="topic-discarded">--}}
-                {{--                                <div class="dash-page-liststatus">DISCARDED</div>--}}
-                {{--                            </li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-listactions">EDIT</div>--}}
-                {{--                            </li>--}}
-                {{--                        </ul>--}}
-                {{--                    </li>--}}
-                {{--                    <li>--}}
-                {{--                        <ul>--}}
-                {{--                            <li>Due Today</li>--}}
-                {{--                            <li>Not Assigned</li>--}}
-                {{--                            <li>Five Signs You Need a New Water Heater</li>--}}
-                {{--                            <li>Acme Plumbing</li>--}}
-                {{--                            <li class="topic-idea">--}}
-                {{--                                <div class="dash-page-liststatus">IDEA</div>--}}
-                {{--                            </li>--}}
-                {{--                            <li>--}}
-                {{--                                <div class="dash-page-listactions">EDIT</div>--}}
-                {{--                            </li>--}}
-                {{--                        </ul>--}}
-                {{--                    </li>--}}
-                {{--                </ul>--}}
+{{--                                <ul class="dash-page-listtitles">--}}
+{{--                                    <li>Due Date </li>--}}
+{{--                                    <li>Writer</li>--}}
+{{--                                    <li>Title</li>--}}
+{{--                                    <li>Project</li>--}}
+{{--                                    <li>Status</li>--}}
+{{--                                    <li>Actions</li>--}}
+{{--                                </ul>--}}
+{{--                                <ul>--}}
+{{--                                    @if(count($Contents) < 1)--}}
+{{--                                        <li >--}}
+{{--                                            <ul>--}}
+{{--                                                <li style="width:97.8%;">No Record Found</li>--}}
+{{--                                            </ul>--}}
+{{--                                        </li>--}}
+{{--                                    @endif--}}
+{{--                                    @foreach($Contents as $k => $v)--}}
+{{--                                    <li>--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="list-red">{{\Carbon\Carbon::parse($v->planned_published_date)->toDateString()}}</li>--}}
+{{--                                            <li>{{$v->writer->user_name}}</li>--}}
+{{--                                            <li>{{$v->title}}</li>--}}
+{{--                                            <li>{{$v->project->project_name}}</li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-liststatus">{{$v->status_name}}</div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-listactions" onclick="window.location.href='{{route('team-edit-content',$v->id)}}'">EDIT</div>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                    @endforeach--}}
+{{--                                </ul>--}}
+{{--                                {{ $Contents->links('vendor.pagination.simple-default') }}--}}
+{{--                                <ul>--}}
+
+
+{{--                                    <li>--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="list-red">3 Days Ago</li>--}}
+{{--                                            <li>Not Assigned</li>--}}
+{{--                                            <li>Five Signs You Need a New Water Heater</li>--}}
+{{--                                            <li>Acme Plumbing</li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-liststatus">TOPIC PROPOSED</div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-listactions">EDIT</div>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <ul>--}}
+{{--                                            <li class="list-orange">Due Today</li>--}}
+{{--                                            <li>Not Assigned</li>--}}
+{{--                                            <li>Five Signs You Need a New Water Heater</li>--}}
+{{--                                            <li>Acme Plumbing</li>--}}
+{{--                                            <li class="topic-approved">--}}
+{{--                                                <div class="dash-page-liststatus">TOPIC APPROVED</div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-listactions">ASSIGN TO WRITER</div>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <ul>--}}
+{{--                                            <li>Due Today</li>--}}
+{{--                                            <li>Not Assigned</li>--}}
+{{--                                            <li>Five Signs You Need a New Water Heater</li>--}}
+{{--                                            <li>Acme Plumbing</li>--}}
+{{--                                            <li class="topic-writing">--}}
+{{--                                                <div class="dash-page-liststatus">WRITING</div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-listactions">REVIEW</div>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <ul>--}}
+{{--                                            <li>Due Today</li>--}}
+{{--                                            <li>Not Assigned</li>--}}
+{{--                                            <li>Five Signs You Need a New Water Heater</li>--}}
+{{--                                            <li>Acme Plumbing</li>--}}
+{{--                                            <li class="topic-ready">--}}
+{{--                                                <div class="dash-page-liststatus">READY TO REVIEW</div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-listactions">PUBLISH</div>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <ul>--}}
+{{--                                            <li>Due Today</li>--}}
+{{--                                            <li>Not Assigned</li>--}}
+{{--                                            <li>Five Signs You Need a New Water Heater</li>--}}
+{{--                                            <li>Acme Plumbing</li>--}}
+{{--                                            <li class="topic-reviewing">--}}
+{{--                                                <div class="dash-page-liststatus">CLIENT REVIEWING</div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-listactions">RESTORE</div>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <ul>--}}
+{{--                                            <li>Due Today</li>--}}
+{{--                                            <li>Not Assigned</li>--}}
+{{--                                            <li>Five Signs You Need a New Water Heater</li>--}}
+{{--                                            <li>Acme Plumbing</li>--}}
+{{--                                            <li class="topic-readyview">--}}
+{{--                                                <div class="dash-page-liststatus">READY TO PUBLISH</div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-listactions">EDIT</div>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <ul>--}}
+{{--                                            <li>Due Today</li>--}}
+{{--                                            <li>Not Assigned</li>--}}
+{{--                                            <li>Five Signs You Need a New Water Heater</li>--}}
+{{--                                            <li>Acme Plumbing</li>--}}
+{{--                                            <li class="topic-published">--}}
+{{--                                                <div class="dash-page-liststatus">PUBLISHED</div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-listactions">PROPOSE TOPIC</div>--}}
+{{--                                                <div class="dash-page-listactions">EDIT</div>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <ul>--}}
+{{--                                            <li>Due Today</li>--}}
+{{--                                            <li>Not Assigned</li>--}}
+{{--                                            <li>Five Signs You Need a New Water Heater</li>--}}
+{{--                                            <li>Acme Plumbing</li>--}}
+{{--                                            <li class="topic-discarded">--}}
+{{--                                                <div class="dash-page-liststatus">DISCARDED</div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-listactions">EDIT</div>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <ul>--}}
+{{--                                            <li>Due Today</li>--}}
+{{--                                            <li>Not Assigned</li>--}}
+{{--                                            <li>Five Signs You Need a New Water Heater</li>--}}
+{{--                                            <li>Acme Plumbing</li>--}}
+{{--                                            <li class="topic-idea">--}}
+{{--                                                <div class="dash-page-liststatus">IDEA</div>--}}
+{{--                                            </li>--}}
+{{--                                            <li>--}}
+{{--                                                <div class="dash-page-listactions">EDIT</div>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
             </div>
         </div>
     </div>

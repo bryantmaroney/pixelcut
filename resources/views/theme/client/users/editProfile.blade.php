@@ -1,4 +1,7 @@
 @extends('theme.layout.app')
+@section('title')
+    Edit Profile
+@endsection
 @section('content')
     <style>
         .add-users-box div:nth-child(2) input {
@@ -16,7 +19,8 @@
     </style>
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
-            <div class="dash-page-title">Edit Profile</div>
+{{--            <div class="dash-page-title">Edit Profile</div>--}}
+            <div class="dash-page-title">Client Dashboard</div>
 
             <form method="POST" action="{{route('updateProfile')}}"><!-- start form -->
                 @csrf

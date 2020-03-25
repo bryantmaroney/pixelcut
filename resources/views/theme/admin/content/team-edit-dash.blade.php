@@ -1,4 +1,7 @@
 @extends('theme.layout.app')
+@section('title')
+	Edit Content
+@endsection
 @section('content')
 	@if ($errors->any())
 		@foreach ($errors->all() as $error)
@@ -18,11 +21,17 @@
 	@endif
 	<div class="dash-contentarea">
 		<div class="dash-contentarea-wrapper">
-			<div class="dash-page-title">Edit Content Details</div>
-			<form method="post" action="{{route('updateContent')}}"><!-- start form -->
+{{--			<div class="dash-page-title">Edit Content Details</div>--}}
+			<div class="dash-page-title">Team Member Dashboard</div>
+			<form method="post" action="{{route('updateContent')}}" id="form"><!-- start form -->
                @csrf
 				<input type="hidden" name="rowId" value="{{$content->id}}">
 				<div class="team-addcontent-changelog getLog" data-id="{{$content->id}}">View Change Log</div>
+				@if($content->is_discard == 0)
+					<input type="submit" name="discard" class="btn btn-danger mt-3 discard-button" value="DISCARD">
+				@else
+					<input type="submit" name="restore" class="btn btn-primary mt-3 restore-button" value="RESTORE">
+				@endif
 				<div class="team-addcontent-titlebox">
 					<div>
 						<label>TITLE*</label>
@@ -164,13 +173,13 @@
 
 				<div class="team-addcontent-publish">
 					<div>
-						<label>PLANNED PUBLISH DATE </label>
-						<input id="publishdate" name="publish_date" type="date" value="{{\Carbon\Carbon::parse($content->planned_published_date)->toDateString()}}">
+						<label>TARGET WRITTEN-BY DATE</label>
+						<input id="targetdate"  name="target_date" type="date" value="{{\Carbon\Carbon::parse($content->target_written_by_date)->toDateString()}}">
 						<span></span>
 					</div>
 					<div>
-						<label>TARGET WRITTEN-BY DATE</label>
-						<input id="targetdate"  name="target_date" type="date" value="{{\Carbon\Carbon::parse($content->target_written_by_date)->toDateString()}}">
+						<label>PLANNED PUBLISH DATE </label>
+						<input id="publishdate" name="publish_date" type="date" value="{{\Carbon\Carbon::parse($content->planned_published_date)->toDateString()}}">
 						<span></span>
 					</div>
 				</div>
@@ -194,7 +203,7 @@
 				<div class="team-addcontent-voice" style="margin-left: 7px">
 					<div>
 						<label>VOICE</label>
-						<textarea name="voice">{{$content->voice}}</textarea>
+						<textarea name="voice" id="voice">{{$content->voice}}</textarea>
 					</div>
 				</div>
 
@@ -245,6 +254,10 @@
 					</div>
 				</div>
 
+				<div class="team-addEditor " >
+					<textarea id="Froala" name="article">{{$article}}</textarea>
+				</div>
+
 				<div class="team-addcontent-bottombuttons">
 					<div>
 {{--						<input type="submit" value="DISCARD">--}}
@@ -270,6 +283,21 @@
 // 		$('.team-addcontent-bottombuttons div input:nth-child(4), .team-addcontent-bottombuttons div input:nth-child(5)').show();
 // 	}
 // });
+
+$('.addcontent-projectdrop').change(function(){
+	if($(this).val() !== ''){
+		const val=  $(this).val();
+		$.ajax({
+			url: '/get-project/'+val,
+			type: 'get',
+			dataType: 'json',
+			success: function (data) {
+				const val = data.project.voice;
+				$('#voice').val(val);
+			}
+		});
+	}
+});
 
 // CHARACTER COUNTER
 function countChar(val) {
@@ -310,11 +338,16 @@ var input = document.querySelector('textarea[name=framing_keyword]'),
 		$('.getLog').on('click', function(){
 			const id = ($(this).data('id'));
 			jQuery.ajax({
-				url: `/admin/get-content-log/${id}`,
+				url: `/content-log/${id}`,
 				method: 'get',
 				success: function(result){
 					$('.contentLog').html(result)
 				}});
 		});
+
+		$(document).ready(function() {
+			var editor = new FroalaEditor('#Froala')
+		});
 	</script>
 @endsection
+

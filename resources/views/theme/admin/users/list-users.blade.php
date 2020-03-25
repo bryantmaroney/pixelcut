@@ -1,4 +1,7 @@
 @extends('theme.layout.app')
+@section('title')
+    Users
+@endsection
 @section('content')
     <style>
         ul.list-users-page li:nth-child(1), ul.list-users-page li ul li:nth-child(1) {
@@ -22,7 +25,8 @@
     </style>
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
-            <div class="dash-page-title">USERS</div>
+{{--            <div class="dash-page-title">USERS</div>--}}
+            <div class="dash-page-title">Team Member Dashboard</div>
             <div class="dash-page-addcontent" onclick="window.location.href='{{route('add-user')}}'">ADD USER <span></span></div>
 
             <form method="get">
@@ -71,7 +75,7 @@
                             <td >{{$v->first_name}}</td>
                             <td>{{$v->last_name}}</td>
                             <td>{{\Carbon\Carbon::parse($v->creatd_at)->toDateString()}}</td>
-                            <td  class="@if($v->status_name == 'Active')badge-active @else badge-proposed @endif">{{$v->status_name}}</td>
+                            <td  class="@if($v->status_name == 'Active')badge-active @else badge-In-active @endif">{{$v->status_name}}</td>
                             <td>{{$v->role_name}} </td>
                             <td>{{\Carbon\Carbon::parse($v->last_login)->toDateTimeString()}} </td>
                             <td>
@@ -103,7 +107,7 @@
 
 
 
-                {{--                <ul class="dash-page-listtitles list-users-page">--}}
+{{--                                <ul class="dash-page-listtitles list-users-page">--}}
 {{--                    <li>First Name</li>--}}
 {{--                    <li>Last Name</li>--}}
 {{--                    <li>Date Added</li>--}}

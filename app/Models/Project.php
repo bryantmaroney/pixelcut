@@ -29,7 +29,7 @@ class Project extends Model
     {
         switch ($this->status) {
             case 0:
-                $status = 'In-Active';
+                $status = 'Inactive';
                 break;
             case 1:
                 $status = 'Active';

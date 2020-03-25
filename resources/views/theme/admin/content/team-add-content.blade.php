@@ -1,8 +1,12 @@
 @extends('theme.layout.app')
+@section('title')
+	Add Content
+@endsection
 @section('content')
 	<div class="dash-contentarea">
 		<div class="dash-contentarea-wrapper">
-			<div class="dash-page-title">Add Content</div>
+{{--			<div class="dash-page-title">Add Content</div>--}}
+			<div class="dash-page-title">Team Member Dashboard</div>
 			@if ($errors->any())
 				@foreach ($errors->all() as $error)
 					<script>
@@ -23,7 +27,7 @@
 				@csrf
 				{{--				<div class="team-addcontent-requestbutton">REQUEST TOPIC APPROVAL</div>--}}
 				{{--				<div class="team-addcontent-discardbutton">DISCARD</div>--}}
-				<a href="{{route('team-dash')}}" class="team-addcontent-discardbutton text-white">DISCARD</a>
+{{--				<a href="{{route('team-dash')}}" class="team-addcontent-discardbutton text-white">DISCARD</a>--}}
 
 				<div class="team-addcontent-titlebox">
 					<div>
@@ -31,9 +35,9 @@
 						<input class="addcontent-titlefield" name="title" value="{{old('title')}}">
 					</div>
 					<div>
-
 						<label>PROJECT*</label>
 						<select class="addcontent-projectdrop" name="project" >
+							<option value="">Select a project</option>
 							@foreach($projects as $k => $v)
 								<option value="{{$v->id}}" {{old('project') == $v->id ? 'selected' : ''}}>{{$v->project_name}}</option>
 							@endforeach
@@ -49,7 +53,7 @@
 							<option value="5" {{old('status') == 5 ? 'selected' : ''}}>Ready To Review</option>
 							<option value="6" {{old('status') == 6 ? 'selected' : ''}}>Ready To Publish</option>
 							<option value="7" {{old('status') == 7 ? 'selected' : ''}}>Publish</option>
-							<option value="8" {{old('status') == 8 ? 'selected' : ''}}>Idea</option>
+							<option value="8" {{old('status') == 8 ? 'selected' : ''}} >Idea</option>
 							<option value="9" {{old('status') == 9 ? 'selected' : ''}}>Assign To Writer</option>
 						</select>
 					</div>
@@ -168,13 +172,13 @@
 
 				<div class="team-addcontent-publish">
 					<div>
-						<label>PLANNED PUBLISH DATE</label>
-						<input id="publishdate" name="publish_date"  value="{{old('publish_date')}}"  type="date" placeholder="Select a date">
+						<label>TARGET WRITTEN-BY DATE</label>
+						<input id="targetdate"  name="target_date"  value="{{old('target_date')}}"   type="date" placeholder="Select a date">
 						<span></span>
 					</div>
 					<div>
-						<label>TARGET WRITTEN-BY DATE</label>
-						<input id="targetdate"  name="target_date"  value="{{old('target_date')}}"   type="date" placeholder="Select a date">
+						<label>PLANNED PUBLISH DATE</label>
+						<input id="publishdate" name="publish_date"  value="{{old('publish_date')}}"  type="date" placeholder="Select a date">
 						<span></span>
 					</div>
 				</div>
@@ -191,14 +195,14 @@
 								<option value="{{$v->id}}" {{old('writter') == $v->id? 'selected' : ''}} >{{$v->user_name}}</option>
 							@endforeach
 						</select>
-						<span></span>
+{{--						<span></span>--}}
 					</div>
 				</div>
 
 				<div class="team-addcontent-voice" style="margin-left: 9px">
 					<div>
 						<label>VOICE</label>
-						<textarea name="voice">{{old('voice')}}</textarea>
+						<textarea name="voice" id="voice">{{old('voice')}}</textarea>
 					</div>
 				</div>
 
@@ -252,6 +256,7 @@
 					<div>
 						<input type="submit" value="ASSIGN TO WRITER" name="writer">
 						<input type="submit" value="SAVE AS IDEA" name="idea">
+						<input type="submit" value="REQUEST TOPIC APPROVAL" name="approval">
 					</div>
 				</div>
 
@@ -263,13 +268,27 @@
 
 	<script>
 		// IF WRITER, REMOVE BUTTONS
-		$('.team-addcontent-publishpage div select').change(function(){
-			if($(this).val() == ''){
-				$('.team-addcontent-bottombuttons div input:nth-child(1), .team-addcontent-bottombuttons div input:nth-child(2), .team-addcontent-bottombuttons div input:nth-child(3)').show();
-				$('.team-addcontent-bottombuttons div input:nth-child(4), .team-addcontent-bottombuttons div input:nth-child(5)').hide();
-			} else {
-				$('.team-addcontent-bottombuttons div input:nth-child(1), .team-addcontent-bottombuttons div input:nth-child(2), .team-addcontent-bottombuttons div input:nth-child(3)').hide();
-				$('.team-addcontent-bottombuttons div input:nth-child(4), .team-addcontent-bottombuttons div input:nth-child(5)').show();
+		// $('.team-addcontent-publishpage div select').change(function(){
+		// 	if($(this).val() == ''){
+		// 		$('.team-addcontent-bottombuttons div input:nth-child(1), .team-addcontent-bottombuttons div input:nth-child(2), .team-addcontent-bottombuttons div input:nth-child(3)').show();
+		// 		$('.team-addcontent-bottombuttons div input:nth-child(4), .team-addcontent-bottombuttons div input:nth-child(5)').hide();
+		// 	} else {
+		// 		$('.team-addcontent-bottombuttons div input:nth-child(1), .team-addcontent-bottombuttons div input:nth-child(2), .team-addcontent-bottombuttons div input:nth-child(3)').hide();
+		// 		$('.team-addcontent-bottombuttons div input:nth-child(4), .team-addcontent-bottombuttons div input:nth-child(5)').show();
+		// 	}
+		// });
+		$('.addcontent-projectdrop').change(function(){
+			if($(this).val() !== ''){
+				const val=  $(this).val();
+				$.ajax({
+					url: '/get-project/'+val,
+					type: 'get',
+					dataType: 'json',
+					success: function (data) {
+						const val = data.project.voice;
+						$('#voice').val(val);
+					}
+				});
 			}
 		});
 

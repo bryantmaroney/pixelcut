@@ -23,7 +23,9 @@ Route::get('logout', [
 ]);
 
 
-Route::get('/forgot-pass', 'theme\AuthenticationController@forgotPassword')->name('forgot-pass');
+Route::get('/forgot-pass', 'AuthenticationController@forgotPassword')->name('forgot-pass');
+Route::get('/setup-pass/{token}', 'AuthenticationController@registerPassword')->name('registerPassword');
+Route::post('/setup-pass-save', 'AuthenticationController@passwordSave')->name('passwordSave');
 
 Route::group(['middleware' => 'auth'], function () {
 

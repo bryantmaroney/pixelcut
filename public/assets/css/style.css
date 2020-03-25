@@ -244,13 +244,13 @@ ul.dash-sidebarlist li span {
 .listicon {
 	float: left;
 	width: 24px;
-	height: 20px;
-	background: url('../images/listicon.svg');
+	height: 25px;
+	background: url('../images/menu-In-active.png');
 	margin-top: 14px;
 }
 
 ul.dash-sidebarlist li.active .listicon {
-	background: url('../images/listicon-active.svg');
+	background: url('../images/menu-active.png');
 }
 
 .projecticon {
@@ -262,7 +262,7 @@ ul.dash-sidebarlist li.active .listicon {
 }
 
 ul.dash-sidebarlist li.active .projecticon, ul.dash-sidebarlist li:hover .projecticon {
-	background: url('../images/projecticon-active.svg');
+	background: url('../images/folder.png');
 }
 
 .usericon {
@@ -1029,7 +1029,7 @@ input.addcontent-wordcount {
 	border-radius: 4px;
 	font-size: 14px;
 	padding: 12px;
-	height: 137px;
+	height: 180px;
 }
 
 .team-addcontent-rightkeywords .tagify.tagify--focus {
@@ -1192,7 +1192,7 @@ input.addcontent-wordcount {
 
 .team-addcontent-voice {
 	float: left;
-    max-width: 347px;
+    /*max-width: 347px;*/
     background: #FFFFFF;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
     border-radius: 4px;
@@ -1367,7 +1367,7 @@ input.addcontent-wordcount {
 
 .team-addcontent-bottombuttons {
 	float: right;
-	margin-top: 50px;
+	margin-top: 40px;
 	margin-bottom: 50px;
 }
 
@@ -1456,7 +1456,7 @@ input.addcontent-wordcount {
 	margin: 0;
 	padding: 0;
 	border-left: 1px solid #8F9BB3;
-	margin-top: 44px;
+	margin-top: 38px;
 }
 
 .changelog-margin ul li {
@@ -1709,9 +1709,9 @@ ul.list-users-page li ul li .dash-page-listactions:last-child {
 	width: 362px;
 }
 
-.add-users-box div:nth-child(4) {
-	margin-top: 19px;
-}
+/*.add-users-box div:nth-child(4) {*/
+/*	margin-top: 19px;*/
+/*}*/
 
 .add-users-box div:nth-child(4) input {
 	width: 320px;
@@ -2231,7 +2231,7 @@ ul.dash-list-personas li:nth-child(3) {
 	float: left;
 	height: 27px;
 	border-radius: 4px;
-	font-size: 10px;
+	font-size: 10px !important;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	line-height: 3px;
@@ -2244,7 +2244,7 @@ ul.dash-list-personas li:nth-child(3) {
 	float: left;
 	height: 27px;
 	border-radius: 4px;
-	font-size: 10px;
+	font-size: 10px !important;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	line-height: 3px;
@@ -2256,7 +2256,7 @@ ul.dash-list-personas li:nth-child(3) {
 	float: left;
 	height: 27px;
 	border-radius: 4px;
-	font-size: 10px;
+	font-size: 10px !important;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	line-height: 3px;
@@ -2268,7 +2268,7 @@ ul.dash-list-personas li:nth-child(3) {
 	float: left;
 	height: 27px;
 	border-radius: 4px;
-	font-size: 10px;
+	font-size: 10px !important;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	line-height: 3px;
@@ -2280,7 +2280,7 @@ ul.dash-list-personas li:nth-child(3) {
 	float: left;
 	height: 27px;
 	border-radius: 4px;
-	font-size: 10px;
+	font-size: 10px !important;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	line-height: 3px;
@@ -2288,16 +2288,31 @@ ul.dash-list-personas li:nth-child(3) {
 }
 
 .badge-proposed{
-	color: #8F9BB3;
+	color: #8F9BB3 !important;
 	border: 1px solid #8F9BB3;
 	float: left;
 	height: 27px;
 	border-radius: 4px;
-	font-size: 10px;
+	font-size: 10px !important;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
+	width: 106px;
+}
+
+.badge-In-active{
+	color: #8F9BB3 !important;
+	border: 1px solid #8F9BB3;
+	float: left;
+	height: 24px;
+	border-radius: 4px;
+	font-size: 10px !important;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	line-height: 3px;
+	margin-top: 15px;
+	width: 85px;
 }
 .badge-write{
 	color: #222B45;
@@ -2305,7 +2320,7 @@ ul.dash-list-personas li:nth-child(3) {
 	float: left;
 	height: 27px;
 	border-radius: 4px;
-	font-size: 10px;
+	font-size: 10px !important;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	line-height: 3px;
@@ -2314,17 +2329,17 @@ ul.dash-list-personas li:nth-child(3) {
 
 .badge-active{
 	background: #00D68F;
-	color: #FFFFFF;
+	color: #FFFFFF !important;
 	border: 1px solid #00D68F;
 	float: left;
-	height: 27px;
+	height: 24px;
 	border-radius: 4px;
-	font-size: 10px;
+	font-size: 10px !important;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
-	width: 70px;
+	width: 85px;
 }
 
 .add-project{
@@ -2337,6 +2352,77 @@ ul.dash-list-personas li:nth-child(3) {
 	margin-top: 30px;
 	position: relative;
 	height: 240px;
+}
+
+.team-addcontent-targetKeywords textarea {
+	float: left;
+	max-width: calc(100% - 24px);
+	min-width: calc(100% - 0px);
+	background: #F7F9FC;
+	border: 1px solid #E4E9F2;
+	border-radius: 4px;
+	font-size: 14px;
+	padding: 12px;
+	height: 93px;
+}
+
+.team-addEditor {
+	float: left;
+	width: calc(100% - 10px);
+	background: #FFFFFF;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+	border-radius: 4px;
+	padding: 24px;
+	margin-top: 30px;
+	clear: left;
+}
+
+.arrow-down{
+	background: url('../images/smalldownarrow.svg');
+	width: 10px;
+	height: 7px;
+	position: absolute;
+	top: 181px;
+	margin-left: 5px;
+}
+.arrow-up{
+	background: url('../images/up-arrow.png');
+	width: 18px;
+	height: 11px;
+	position: absolute;
+	top: 175px;
+	margin-left: 1px;
+}
+.discard-button{
+	float: right !important;
+	width: 110px !important;
+	height: 40px !important;
+	font-family: 'Open Sans', sans-serif !important;
+	color: #FFFFFF !important;
+	background: #FF3D71 !important;
+	font-size: 14px !important;
+	margin-right: 16px !important;
+	font-weight: 600 !important;
+}
+
+.restore-button{
+	float: right !important;
+	width: 110px !important;
+	height: 40px !important;
+	font-family: 'Open Sans', sans-serif !important;
+	color: #FFFFFF !important;
+	background: #3366FF !important;
+	font-size: 14px !important;
+	margin-right: 16px !important;
+	font-weight: 600 !important;
+}
+
+.text-red{
+	color: #FF3D71 !important;
+}
+
+.text-orange{
+	color: #FFAA00 !important;
 }
 
 

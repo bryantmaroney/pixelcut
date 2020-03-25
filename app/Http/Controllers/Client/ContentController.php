@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\addAtricle;
 use App\Http\Requests\addContent;
+use App\Models\ActivityLog;
 use App\Models\Article;
 use App\Models\Content;
 use App\Models\ContentArticle;
@@ -16,19 +17,38 @@ use Illuminate\Support\Facades\Auth;
 class ContentController extends Controller
 {
 
-    public function contentReviewSave(addAtricle $request)
+    public function contentReviewSave(Request $request)
     {
         $this->updateStatus($request->contentId , $request->draft);
-        $article = Article::create([
-            'user_id' => Auth::user()->id,
-            'article' => $request->article,
-            'status' => isset($request->draft) ? Article::DRAFT : Article::PUBLISH
-        ]);
-        ContentArticle::create([
-            'project_id' => $request->projectId,
-            'content_id' => $request->contentId,
-            'article_id' => $article->id,
-        ]);
+        $content = Content::where('id','=',$request->contentId)->first();
+        $article =  $content->article->first();
+        if ($article != null){
+            $article->update([
+                'article' => $request->article,
+            ]);
+        }elseif($request->article != null){
+            $article = Article::create([
+                'user_id' => Auth::user()->id,
+                'article' => $request->article,
+                'status' => isset($request->draft) ? Article::DRAFT : Article::PUBLISH
+            ]);
+            ContentArticle::create([
+                'project_id' => $request->projectId,
+                'content_id' => $request->contentId,
+                'article_id' => $article->id,
+            ]);
+        }
+        ActivityLog::saveActivityLog(Auth::user()->id,ActivityLog::TYPE_UPDATE_CONTENT,$request->contentId,"Content Updated by ".Auth::user()->first_name ."-".Auth::user()->last_name);
+//        $article = Article::create([
+//            'user_id' => Auth::user()->id,
+//            'article' => $request->article,
+//            'status' => isset($request->draft) ? Article::DRAFT : Article::PUBLISH
+//        ]);
+//        ContentArticle::create([
+//            'project_id' => $request->projectId,
+//            'content_id' => $request->contentId,
+//            'article_id' => $article->id,
+//        ]);
 
         return redirect()->route('client-dash')->with('success','content updated......');
     }

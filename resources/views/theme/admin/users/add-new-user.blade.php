@@ -1,4 +1,7 @@
 @extends('theme.layout.app')
+@section('title')
+	Add User
+@endsection
 @section('content')
 	@if ($errors->any())
 		@foreach ($errors->all() as $error)
@@ -18,7 +21,8 @@
 	@endif
 	<div class="dash-contentarea">
 		<div class="dash-contentarea-wrapper">
-			<div class="dash-page-title">Add New User</div>
+{{--			<div class="dash-page-title">Add New User</div>--}}
+			<div class="dash-page-title">Team Member Dashboard</div>
 
 			<form method="POST" action="{{route('insert-user')}}"><!-- start form -->
                 @csrf
@@ -50,8 +54,8 @@
 					<div style="margin-top: 20px">
 						<label>Status*</label>
                         <select class="addcontent-projectdrop" name="status" >
-                            <option value="1" {{ old('status') == 1 ? 'selected' : ''}}>Active</option>
-                            <option value="0" {{ old('status') == 0 ? 'selected' : ''}}>In-Active</option>
+                            <option value="1" selected>Active</option>
+                            <option value="0" >Inactive</option>
                         </select>
 					</div>
 				</div>

@@ -1,4 +1,7 @@
 @extends('theme.layout.app')
+@section('title')
+	Content  Assigment
+@endsection
 @push('cs')
 
 @endpush
@@ -32,7 +35,8 @@
 	@endif
 	<div class="dash-contentarea">
 		<div class="dash-contentarea-wrapper">
-			<div class="dash-page-title">Content Assigment</div>
+{{--			<div class="dash-page-title">Content Assigment</div>--}}
+			<div class="dash-page-title">Writer Dashboard</div>
 {{--			<div class="team-addcontent-changelog">View Change Log</div>--}}
 			<div class="team-addcontent-changelog getLog" data-id="{{$content->id}}">View Change Log</div>
 			<form method="post" action="{{route('addArticle')}}"><!-- start form -->
@@ -121,7 +125,7 @@
 		$('.getLog').on('click', function(){
 			const id = ($(this).data('id'));
 			jQuery.ajax({
-				url: `/writer/get-content-log/${id}`,
+				url: `/get-content-log/${id}`,
 				method: 'get',
 				success: function(result){
 					$('.contentLog').html(result)

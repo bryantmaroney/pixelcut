@@ -1,8 +1,12 @@
 @extends('theme.layout.app')
+@section('title')
+    My Content Assigments
+@endsection
 @section('content')
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
-            <div class="dash-page-title">My Content Assigments</div>
+{{--            <div class="dash-page-title">My Content Assigments</div>--}}
+            <div class="dash-page-title">Writer Dashboard</div>
             <form action="{{route('writter-dash')}}" method="get">
                    <div class="dash-page-searcharea">
                     <div class="dashsearch">
@@ -55,10 +59,11 @@
                             <td colspan="6">No Record Found</td>
                         </tr>
                     @endif
-
                     @foreach($Contents as $k => $v)
                            <tr class="customTrStyle">
-                            <td scope="row">{{\Carbon\Carbon::parse($v->planned_published_date)->toDateString()}}</td>
+                            <td @if(\Carbon\Carbon::now()->toDateString() == \Carbon\Carbon::parse($v->planned_published_date)->toDateString()) class="text-orange"
+                                         @elseif( \Carbon\Carbon::now()->toDateString() > \Carbon\Carbon::parse($v->planned_published_date)->toDateString() ) class="text-red"
+                                    @endif>{{\Carbon\Carbon::parse($v->planned_published_date)->toDateString()}}</td>
                             <td>{{$v->writer->user_name}}</td>
                             <td>{{$v->title}}</td>
                             <td>{{$v->project->project_name}}</td>

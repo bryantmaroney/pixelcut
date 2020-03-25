@@ -1,8 +1,12 @@
 @extends('theme.layout.app')
+@section('title')
+    Edit User
+@endsection
 @section('content')
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
-            <div class="dash-page-title">Edit User</div>
+{{--            <div class="dash-page-title">Edit User</div>--}}
+            <div class="dash-page-title">Team Member Dashboard</div>
             @if ($errors->any())
                 @foreach ($errors->all() as $error)
                     <script>

@@ -1,8 +1,12 @@
 @extends('theme.layout.app')
+@section('title')
+    Edit Project
+@endsection
 @section('content')
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
-            <div class="dash-page-title">Project: {{$project->project_name}}</div>
+{{--            <div class="dash-page-title">Project: {{$project->project_name}}</div>--}}
+            <div class="dash-page-title">Team Member Dashboard</div>
 
             <ul class="tabs-switch">
                 <li class="tab-switcher c0 @if($tab == 'view') active @endif" data-tab-index="0" tabindex="0">CONTENT</li>
