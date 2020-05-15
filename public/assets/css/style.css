@@ -2425,6 +2425,14 @@ ul.dash-list-personas li:nth-child(3) {
 	color: #FFAA00 !important;
 }
 
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: #C5CEE0 !important;
+}
+
+.customTrStyle > td {
+    vertical-align: middle !important;
+}
+
 
 
 

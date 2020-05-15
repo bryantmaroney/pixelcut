@@ -1,12 +1,12 @@
 @extends('theme.layout.app')
 @section('title')
-    Contents
+    Content
 @endsection
 @section('content')
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
 {{--            <div class="dash-page-title">Content</div>--}}
-            <div class="dash-page-title">Team Member Dashboard</div>
+            <div class="dash-page-title">Content</div>
             <div class="dash-page-addcontent" onclick="window.location.href='{{route('team-add-content')}}'">ADD CONTENT <span></span></div>
             <form action="{{route('team-dash')}}" method="get" id="form">
                 <div class="dash-page-searcharea">
@@ -32,13 +32,13 @@
                             <option value="4">Client Reviewing</option>
                             <option value="5">Ready To Review</option>
                             <option value="6">Ready To Publish</option>
-                            <option value="7">Publish</option>
+                            <option value="7">Published</option>
                         </select>
                         <span></span>
                     </div>
                     <div class="dashdropdown-check">
                         <input type="checkbox" name="discarded" value="discard" @if($discarded == "discard") checked @endif> Show Discarded
-                        <button type="submit" class="dash-page-listactions" style="float: right;     margin-left: 34px;     height: 36px;     margin-top: -4px;  color: white;">Search</button>
+                        <button type="submit" class="dash-page-listactions" style="font-family:'Open Sans', sans-serif;font-weight:600;float:right;margin-left:34px;height:36px;margin-top:-4px;color:white;">SEARCH</button>
                     </div>
                 </div>
             </form>
@@ -78,13 +78,13 @@
                             <td>{{$v->writer->user_name}}</td>
                             <td>{{$v->title}}</td>
                             <td>{{$v->project->project_name}}</td>
-                            <td class=" @if($v->status_name == 'Publish') badge-proposed @elseif($v->status_name == 'Client Reviewing') badge-proposed @elseif($v->status_name == 'Topic Proposed') badge-proposed @elseif($v->status_name == 'Topic Approved') badge-approved @elseif($v->status_name == 'Writing') badge-write @elseif($v->status_name == 'Ready To Review') badge-ready @elseif($v->status_name == 'Ready To Publish') badge-published @elseif($v->status_name == 'Idea') badge-idea @elseif($v->status_name == 'Assign To Writer') badge-approved @endif ">{{$v->status_name}}
+                            <td class=" @if($v->status_name == 'Published') badge-proposed @elseif($v->status_name == 'Client Reviewing') badge-proposed @elseif($v->status_name == 'Topic Proposed') badge-proposed @elseif($v->status_name == 'Topic Approved') badge-approved @elseif($v->status_name == 'Writing') badge-write @elseif($v->status_name == 'Ready To Review') badge-ready @elseif($v->status_name == 'Ready To Publish') badge-published @elseif($v->status_name == 'Idea') badge-idea @elseif($v->status_name == 'Assign To Writer') badge-approved @endif ">{{$v->status_name}}
                             </td>
                             <td>
                                 @if($v->status_name == 'Idea')
-                                    <a href="" class="dash-page-listactions mr-1" style="margin-top: 4px;">Propose Topic</a>
+                                    <a href="" class="dash-page-listactions mr-1" style="margin-top:4px;text-transform:uppercase;">Propose Topic</a>
                                 @endif
-                                <a href="{{route('team-edit-content',$v->id)}}" class="dash-page-listactions" style="margin-top: 4px;">Edit</a>
+                                <a href="{{route('team-edit-content',$v->id)}}" class="dash-page-listactions" style="margin-top:4px;text-transform:uppercase;">Edit</a>
                             </td>
                         </tr>
                     @endforeach
@@ -186,7 +186,7 @@
 {{--                                                <div class="dash-page-liststatus">READY TO REVIEW</div>--}}
 {{--                                            </li>--}}
 {{--                                            <li>--}}
-{{--                                                <div class="dash-page-listactions">PUBLISH</div>--}}
+{{--                                                <div class="dash-page-listactions">PUBLISHED</div>--}}
 {{--                                            </li>--}}
 {{--                                        </ul>--}}
 {{--                                    </li>--}}

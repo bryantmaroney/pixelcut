@@ -9,6 +9,16 @@
         margin: 10px;
     }
 </style>
+<script>
+$(document).ready(function(){
+	$('.login-formarea div input').keypress(function (e) {
+		if (e.which == 13) {
+			$('#login').submit();
+			return false;    
+		}
+	});
+});
+</script>
 
 <div class="logo-wrapper">
     <div class="logo-margin">
@@ -43,7 +53,7 @@
                 </div>
                 <div>
                     <label>PASSWORD</label>
-                    <span onclick="window.location='/forgot-pass'" class="login-forgotpass">forgot password?</span>
+                    <span onclick="window.location='/forgot-pass'" class="login-forgotpass">Forgot Password?</span>
                     <input type="password" name="password">
                     <span class="login-lock"></span>
                 </div>

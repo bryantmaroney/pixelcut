@@ -1,8 +1,8 @@
 <div class="dash-header">
     <div class="dash-header-arrow" onclick="window.location.href='{{url()->previous()}}'"></div>
     <div class="dash-header-title">
-        Content Writter Dashboard
-        <input type="button" value="Logout" class="dash-page-listactions" onclick="window.location.href='/logout'" style="float: right; margin-right: 25px; height: 40px">
+        Content Writer Dashboard
+        <input type="button" value="Logout" class="dash-page-listactions" onclick="window.location.href='/logout'" style="float:right;margin-right:25px;background-color: transparent;border: none;color: #8F9BB3;font-family: 'Open Sans';font-size: 13px;font-weight: 900;text-transform: uppercase;margin-top:20px;">
 
         <input type="button" value="Edit Profile" class="dash-page-listactions" onclick="window.location.href='{{route('writerEditProfile')}}'" style="float: right; margin-right: 9px; height: 40px">
     </div>
