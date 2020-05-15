@@ -6,7 +6,7 @@
 	<div class="dash-contentarea">
 		<div class="dash-contentarea-wrapper">
 {{--			<div class="dash-page-title">Add Content</div>--}}
-			<div class="dash-page-title">Team Member Dashboard</div>
+			<div class="dash-page-title">Add Content</div>
 			@if ($errors->any())
 				@foreach ($errors->all() as $error)
 					<script>
@@ -46,15 +46,15 @@
 					<div>
 						<label>STATUS*</label>
 						<select class="addcontent-statusdrop" name="status">
+							<option value="8" {{old('status') == 8 ? 'selected' : ''}} >Idea</option>
 							<option value="1" {{old('status') == 1 ? 'selected' : ''}}>Topic Proposed</option>
 							<option value="2" {{old('status') == 2 ? 'selected' : ''}}>Topic Approved</option>
 							<option value="3" {{old('status') == 3 ? 'selected' : ''}}>Writing</option>
-							<option value="4" {{old('status') == 4 ? 'selected' : ''}}>Client Reviewing</option>
 							<option value="5" {{old('status') == 5 ? 'selected' : ''}}>Ready To Review</option>
+							<option value="4" {{old('status') == 4 ? 'selected' : ''}}>Client Reviewing</option>
 							<option value="6" {{old('status') == 6 ? 'selected' : ''}}>Ready To Publish</option>
-							<option value="7" {{old('status') == 7 ? 'selected' : ''}}>Publish</option>
-							<option value="8" {{old('status') == 8 ? 'selected' : ''}} >Idea</option>
-							<option value="9" {{old('status') == 9 ? 'selected' : ''}}>Assign To Writer</option>
+							<option value="7" {{old('status') == 7 ? 'selected' : ''}}>Published</option>
+							<!--<option value="9" {{old('status') == 9 ? 'selected' : ''}}>Assign To Writer</option>-->
 						</select>
 					</div>
 					<div>
@@ -155,6 +155,7 @@
 								<option value="11" {{old('tatic') == 11 ? 'selected' : ''}}>Infographic</option>
 								<option value="12" {{old('tatic') == 12 ? 'selected' : ''}}>Template</option>
 								<option value="13" {{old('tatic') == 13 ? 'selected' : ''}}>Tool</option>
+								<option value="14" {{old('tatic') == 14 ? 'selected' : ''}}>Other</option>
 							</select>
 						</div>
 						<div class="team-addcontent-targetKeywords">
