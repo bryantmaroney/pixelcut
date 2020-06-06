@@ -14,7 +14,7 @@ class Content extends Model
     const STATUS_CLIENT_REVIEWING = 4;
     const STATUS_READY_TO_REVIEW = 5;
     const STATUS_READY_TO_PUBLISH = 6;
-    const STATUS_PUBLISH = 7;
+    const STATUS_PUBLISHED = 7;
     const STATUS_IDEA = 8;
     const STATUS_ASSIGN_TO_WRITER = 9;
     const DISCARD = 1;
@@ -77,7 +77,7 @@ class Content extends Model
                 $status = 'Ready To Publish';
                 break;
             case 7:
-                $status = 'Publish';
+                $status = 'Published';
                 break;
             case 8:
                 $status = 'Idea';

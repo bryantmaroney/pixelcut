@@ -21,7 +21,7 @@ class ArticleController extends Controller
             $article = Article::create([
                 'user_id' => Auth::user()->id,
                 'article' => $request->article,
-                'status' => isset($request->draft) ? Article::DRAFT : Article::PUBLISH
+                'status' => isset($request->draft) ? Article::DRAFT : Article::PUBLISHED
             ]);
             ContentArticle::create([
                 'project_id' => $request->projectId,
@@ -31,7 +31,7 @@ class ArticleController extends Controller
         } else {
             $article = Article::where('id', '=', $data->id)->update([
                 'article' => $request->article,
-                'status' => isset($request->draft) ? Article::DRAFT : Article::PUBLISH
+                'status' => isset($request->draft) ? Article::DRAFT : Article::PUBLISHED
             ]);
         }
 
@@ -42,8 +42,8 @@ class ArticleController extends Controller
 
     public function updateStatus($contentID,$draft){
         $status = '';
-        $checkStatus = isset($draft) ? Article::DRAFT : Article::PUBLISH;
-        if($checkStatus == Article::PUBLISH) {
+        $checkStatus = isset($draft) ? Article::DRAFT : Article::PUBLISHED;
+        if($checkStatus == Article::PUBLISHED) {
             $status = Content::STATUS_READY_TO_REVIEW;
         } else {
             $status = Content::STATUS_WRITING;

@@ -206,7 +206,7 @@ class TeamController extends Controller
                 $status = 'Ready To Publish';
                 break;
             case "7":
-                $status = 'Publish';
+                $status = 'Published';
                 break;
             case "8":
                 $status = 'Idea';
