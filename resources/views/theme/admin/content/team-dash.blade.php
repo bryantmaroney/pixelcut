@@ -3,6 +3,20 @@
     Content
 @endsection
 @section('content')
+
+<script>
+$(document).ready(function(){
+	$('.dash-page-searcharea .dashdropdown-projects select, .dash-page-searcharea .dashdropdown-status select').css('color','#8992A3');
+	$('.dash-page-searcharea .dashdropdown-projects select, .dash-page-searcharea .dashdropdown-status select').change(function() {
+	    var current = $(this).val();
+	    if (current != 'null') {
+	        $(this).css('color','#333');
+	    } else {
+	        $(this).css('color','#8992A3');
+	    }
+	});
+});
+</script>
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
 {{--            <div class="dash-page-title">Content</div>--}}
@@ -16,6 +30,7 @@
                     </div>
                     <div class="dashdropdown-projects">
                         <select name="project">
+                            <option style="color:#8992A3;" disabled="disabled" selected="selected">Select an Option</option>
                             <option value="">All Projects</option>
                             @foreach($projects as $k => $v)
                                 <option value="{{$v->id}}">{{$v->project_name}}</option>
@@ -25,6 +40,7 @@
                     </div>
                     <div class="dashdropdown-status">
                         <select name="status" style="width: calc(185px - 10px);">
+                            <option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
                             <option value="">All Statuses</option>
                             <option value="1">Topic Proposed</option>
                             <option value="2">Topic Approved</option>

@@ -435,8 +435,20 @@ ul.dash-sidebarlist li.active .usericon, ul.dash-sidebarlist li:hover .usericon 
 }
 
 .dash-page-searcharea .dashdropdown-projects select option {
-	color: #8F9BB3;
+	/*color: #8F9BB3;*/
 	opacity: 0.4;
+}
+
+.dash-page-searcharea .dashdropdown-projects select option:disabled {
+	color: #8F9BB3 !important;
+}
+
+.dash-page-searcharea .dashdropdown-projects select[disabled='disabled'] {
+    color: red !important;
+}
+
+.dash-page-searcharea .dashdropdown-projects select option[disabled='disabled'] {
+    color: red !important;
 }
 
 .dash-page-searcharea .dashdropdown-status select {

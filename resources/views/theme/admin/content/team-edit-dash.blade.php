@@ -40,6 +40,7 @@
 					<div>
 						<label>PROJECT*</label>
 						<select class="addcontent-projectdrop" name="project">
+							<option style="color:#8992A3;" disabled="disabled">Select an Option</option>
 							@foreach($projects as $k => $v)
 								<option value="{{$v->id}}" @if($v->id == $content->project_id) selected @endif>{{$v->project_name}}</option>
 							@endforeach
@@ -48,6 +49,7 @@
 					<div>
 						<label>STATUS*</label>
 						<select class="addcontent-statusdrop" name="status">
+							<option style="color:#8992A3;" disabled="disabled">Select an Option</option>
 							<option value="1"  @if($content->status == 1) selected @endif>Topic Proposed</option>
 							<option value="2" @if($content->status == 2) selected @endif>Topic Approved</option>
 							<option value="3" @if($content->status == 3) selected @endif>Writing</option>
@@ -143,6 +145,7 @@
 						<div>
 							<label>CONTENT TACTIC</label>
 							<select name="tatic">
+								<option style="color:#8992A3;" disabled="disabled">Select an Option</option>
 								<option value="1" @if($content->content_tactic == 1) selected @endif>Comparison Guide</option>
 								<option value="2" @if($content->content_tactic == 2) selected @endif>Gated Content</option>
 								<option value="3" @if($content->content_tactic == 3) selected @endif>Interview</option>
@@ -192,6 +195,7 @@
 					<div>
 						<label>WRITER</label>
 						<select name="writter">
+							<option style="color:#8992A3;" disabled="disabled">Select an Option</option>
 							@foreach($writers as $k => $v)
 								<option value="{{$v->id}}" @if($v->id == $content->writer_id) selected @endif>{{$v->user_name}}</option>
 							@endforeach
@@ -228,6 +232,7 @@
 					<div>
 						<label>PERSONA</label>
 						<select name="persona">
+							<option style="color:#8992A3;" disabled="disabled">Select an Option</option>
 							@foreach($personas as $k => $v)
 								<option value="{{$v->id}}" @if($v->id == $content->persona) selected @endif>{{$v->persona_name}}</option>
 							@endforeach
@@ -237,6 +242,7 @@
 					<div>
 						<label>PILLAR</label>
 						<select name="pillar">
+							<option style="color:#8992A3;" disabled="disabled">Select an Option</option>
 							<option value="1" @if($content->pillar == 1) selected @endif >Volvo</option>
 							<option value="2" @if($content->pillar == 2) selected @endif >Saab</option>
 							<option value="3" @if($content->pillar == 3) selected @endif >Mercedes</option>
@@ -246,6 +252,7 @@
 					<div>
 						<label>CLUSTER</label>
 						<select name="cluster">
+							<option style="color:#8992A3;" disabled="disabled">Select an Option</option>
 							<option value="1" @if($content->cluster == 1) selected @endif  >Volvo</option>
 							<option value="2" @if($content->cluster == 2) selected @endif >Saab</option>
 							<option value="3" @if($content->cluster == 3) selected @endif >Mercedes</option>
