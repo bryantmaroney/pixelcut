@@ -481,6 +481,15 @@ ul.dash-sidebarlist li.active .usericon, ul.dash-sidebarlist li:hover .usericon 
     margin-top: 21px;
 }
 
+.team-addcontent-titlebox div span {
+	background: url('../images/clear-downarrow.png');
+	width: 15px;
+	height: 10px;
+	display: inline-block;
+	margin-left: -46px;
+    margin-top: 41px;
+}
+
 .dashdropdown-check {
 	float: left;
 	margin-left: 19px;
@@ -864,6 +873,9 @@ input.addcontent-wordcount {
 	clear: left;
 	margin-right: 21px;
 	font-size: 14px;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .team-addcontent-titlebox input {
@@ -1012,6 +1024,19 @@ input.addcontent-wordcount {
 	background: #F7F9FC;
 	font-size: 14px;
 	border: 1px solid #E4E9F2;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-left: 10px;
+}
+
+.team-addcontent-leftkeywords span {
+	background: url('../images/clear-downarrow.png');
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    margin-left: -25px;
+    margin-top: 43px;
 }
 
 .team-addcontent-leftkeywords input {
@@ -1206,8 +1231,8 @@ input.addcontent-wordcount {
     width: 15px;
     height: 10px;
     display: inline-block;
-    margin-left: -30px;
-    margin-top: 41px;
+    margin-left: -27px;
+    margin-top: 42px;
 }
 
 .team-addcontent-publishpage div select option[data-default] {

@@ -77,6 +77,7 @@
 								<option value="{{$v->id}}" {{old('project') == $v->id ? 'selected' : ''}}>{{$v->project_name}}</option>
 							@endforeach
 						</select>
+						<span></span>
 					</div>
 					<div>
 						<label>STATUS*</label>
@@ -92,6 +93,7 @@
 							<option value="7" {{old('status') == 7 ? 'selected' : ''}}>Published</option>
 							<!--<option value="9" {{old('status') == 9 ? 'selected' : ''}}>Assign To Writer</option>-->
 						</select>
+						<span></span>
 					</div>
 					<div>
 						<label>MINIMUM WORD COUNT*</label>
@@ -194,6 +196,7 @@
 								<option value="13" {{old('tatic') == 13 ? 'selected' : ''}}>Tool</option>
 								<option value="14" {{old('tatic') == 14 ? 'selected' : ''}}>Other</option>
 							</select>
+							<span></span>
 						</div>
 						<div class="team-addcontent-targetKeywords">
 							<label>TARGET KEYWORD</label>
@@ -234,6 +237,7 @@
 								<option value="{{$v->id}}" {{old('writter') == $v->id? 'selected' : ''}} >{{$v->user_name}}</option>
 							@endforeach
 						</select>
+						<span></span>
 {{--						<span></span>--}}
 					</div>
 				</div>
