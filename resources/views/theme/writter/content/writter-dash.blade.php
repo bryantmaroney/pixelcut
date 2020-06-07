@@ -35,9 +35,9 @@
                         </select>
                         <span></span>
                     </div>
-                    <div class="dashdropdown-check">
+                    <div class="dashdropdown-check writer-dash-search-button">
 {{--                        <input type="checkbox" name="discarded" value="discarded"> Place yout text--}}
-                        <button type="submit" class="dash-page-listactions" style="float: right;     margin-left: 34px;     height: 36px;     margin-top: -4px;  color: white;">Search</button>
+                        <button type="submit" class="dash-page-listactions">SEARCH</button>
                     </div>
                 </div>
             </form>

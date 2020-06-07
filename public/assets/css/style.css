@@ -2627,6 +2627,70 @@ select {
     margin-bottom: 2px;
 }
 
+.client-dash-project-manager-drop span {
+	background: url('../images/clear-downarrow.png');
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    margin-left: -45px;
+    margin-top: 40px;
+}
+
+.client-dash-project-manager-drop select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.client-dash-status-drop span {
+	background: url('../images/clear-downarrow.png');
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    margin-left: -45px;
+    margin-top: 40px;
+}
+
+.client-dash-status-drop select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.client-dash-add-contact tags {
+	float: left;
+    height: 172px;
+    background: #F7F9FC;
+    border: 1px solid #E4E9F2;
+    border-radius: 4px;
+    margin-right: 21px;
+    clear: left;
+    padding: 0 10px;
+    font-size: 14px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.client-dash-add-contact label {
+	float: left;
+    font-size: 12px;
+    color: #8992A3;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.writer-dash-search-button button {
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    float: right;
+    height: 50px;
+    margin-top: -18px;
+    color: white;
+    padding: 0 39px;
+    margin-left: 17px;
+    font-size: 11px;
+}
+
 
 
 
