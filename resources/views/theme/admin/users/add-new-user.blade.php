@@ -53,10 +53,16 @@ $(document).ready(function(){
 						<label>ROLE*</label>
 						<select class="addcontent-projectdrop" name="is_admin" >
 							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
+							<!--
 							<option value="1" {{old('is_admin') == 1 ? 'selected' : ''}}>Admin</option>
 							<option value="0" {{old('is_admin') == 0 ? 'selected' : ''}}>Client</option>
 							<option value="2" {{old('is_admin') == 2 ? 'selected' : ''}}>Writter</option>
+							-->
+							<option value="1">Admin</option>
+							<option value="0">Client</option>
+							<option value="2">Writer</option>
 						</select>
+						<span></span>
 					</div>
 					<div style="margin-top: 20px">
 						<label>EMAIL ADDRESS*</label>
@@ -73,6 +79,7 @@ $(document).ready(function(){
                             <option value="1">Active</option>
                             <option value="0">Inactive</option>
                         </select>
+                        <span></span>
 					</div>
 				</div>
 

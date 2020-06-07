@@ -242,6 +242,7 @@ $(document).ready(function(){
 					</div>
 				</div>
 
+				<!--
 				<div class="team-addcontent-persona">
 					<div>
 						<label>PERSONA</label>
@@ -274,6 +275,7 @@ $(document).ready(function(){
 						</select>
 					</div>
 				</div>
+				-->
 
 				<div class="team-addEditor " >
 					<textarea id="Froala" name="article">{{$article}}</textarea>

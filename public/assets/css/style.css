@@ -2507,6 +2507,126 @@ select {
 	font-family: 'Open Sans', sans-serif !important;
 }
 
+.add-project-project-manager-drop span {
+	background: url('../images/clear-downarrow.png');
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    margin-left: -45px;
+    margin-top: 40px;
+}
+
+.add-project-project-manager-drop select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.add-project-status-drop span {
+	background: url('../images/clear-downarrow.png');
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    margin-left: -45px;
+    margin-top: 40px;
+}
+
+.add-project-status-drop select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.add-points-of-contact label {
+	float: left;
+    font-size: 12px;
+    color: #8992A3;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.add-points-of-contact tags {
+	float: left;
+    /*height: 46px;*/
+    height: 172px;
+    background: #F7F9FC;
+    border: 1px solid #E4E9F2;
+    border-radius: 4px;
+    margin-right: 21px;
+    clear: left;
+    padding: 0 10px;
+    font-size: 14px;
+    width: 100%;
+    padding-top: 4px;
+}
+
+.add-users-box div select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.add-users-box div span {
+	background: url('../images/clear-downarrow.png');
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    margin-left: -45px;
+    margin-top: 40px;
+}
+
+.edit-project-project-manager select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.edit-project-project-manager span {
+	background: url('../images/clear-downarrow.png');
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    margin-left: -45px;
+    margin-top: 40px;
+}
+
+.edit-project-status select {
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.edit-project-status span {
+	background: url('../images/clear-downarrow.png');
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    margin-left: -45px;
+    margin-top: 40px;
+}
+
+.edit-project-add-contact tags {
+	float: left;
+    height: 172px;
+    background: #F7F9FC;
+    border: 1px solid #E4E9F2;
+    border-radius: 4px;
+    margin-right: 21px;
+    clear: left;
+    padding: 0 10px;
+    font-size: 14px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.edit-project-add-contact label {
+	float: left;
+    font-size: 12px;
+    color: #8992A3;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
 
 
 

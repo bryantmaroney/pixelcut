@@ -1,3 +1,17 @@
+<script>
+$(document).ready(function(){
+	$('.add-project-name div select').css('color','#8992A3');
+	$('.add-project-name div select').change(function() {
+	    var current = $(this).val();
+	    if (current != 'null') {
+	        $(this).css('color','#333');
+	    } else {
+	        $(this).css('color','#8992A3');
+	    }
+	});
+});
+</script>
+
 <style>
 	.tagify__input--outside{
 		display: block;
@@ -54,26 +68,28 @@
 			<label>CLIENT WEBSITE</label>
 			<input type="text" name="website" value="{{$project->client_website}}">
 		</div>
-		<div>
+		<div class="edit-project-project-manager">
 			<label>PROJECT MANAGER</label>
 			<select class="addcontent-projectdrop" name="p_manager">
-				<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
+				<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select a PM</option>
 				@foreach($projectManagers as $v)
 					<option value="{{$v->id}}" @if($v->id == $project->project_manager_id) selected @endif>{{$v->user_name}}</option>
 				@endforeach
 			</select>
+			<span></span>
 		</div>
-		<div>
-			<label>Status</label>
+		<div class="edit-project-status">
+			<label>STATUS</label>
 			<select class="addcontent-projectdrop" name="status">
-				<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
-				<option value="1" @if($project->status == 1) selected @endif>Active</option>
-				<option value="0" @if($project->status == 0) selected @endif>In Active</option>
+				<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select Status</option>
+				<option value="1">Active</option>
+				<option value="0">In Active</option>
 			</select>
+			<span></span>
 		</div>
 	</div>
 	
-	<div class="add-project">
+	<div class="add-project edit-project-add-contact">
 		<label>POINTS OF CONTACT</label>
 		<input type="text" name='user_name' class="tags-look" value="{{$clientNames}}">
 {{--		<input type="text" name="user_name" placeholder="Search All Users" value="{{$clientNames}}">--}}
