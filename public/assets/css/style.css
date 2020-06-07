@@ -282,7 +282,9 @@ ul.dash-sidebarlist li.active .usericon, ul.dash-sidebarlist li:hover .usericon 
 	width: 100%;
 	height: 64px;
 	background: #FFFFFF;
-	box-shadow: 0 2px 13px 0 rgba(0,0,0,0.07);
+	box-shadow: 0 2px 13px 0 rgba(0,0,0,0.09);
+	position: relative;
+	z-index: 9;
 }
 
 .dash-contentarea {
@@ -291,6 +293,7 @@ ul.dash-sidebarlist li.active .usericon, ul.dash-sidebarlist li:hover .usericon 
 	height: 100%;
 	position: absolute;
 	top:64px;
+	background: #F9FAFB;
 }
 
 .dash-header-title {
@@ -483,8 +486,9 @@ ul.dash-sidebarlist li.active .usericon, ul.dash-sidebarlist li:hover .usericon 
 	font-size: 13px;
 	color: #222B45;
 	font-family: 'Open Sans', sans-serif;
-	margin-top: 11px;
-    font-weight: 600;;
+	margin-top: 18px;
+    font-weight: 600;
+    margin-bottom: -7px;
 }
 
 .dashdropdown-check input[type=checkbox] {
@@ -2238,7 +2242,8 @@ ul.dash-list-personas li:nth-child(3) {
 }
 .badge-ready{
 	background: #FFAA00;
-	color: #FFFFFF;
+	color: #FFFFFF !important;
+	text-transform: uppercase;
 	border: 1px solid #FFAA00;
 	float: left;
 	height: 27px;
@@ -2248,11 +2253,12 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
+	text-transform: uppercase;
 }
 .badge-published{
-	background: #00997A;
-	color: #FFFFFF;
-	border: 1px solid #00997A;
+	background: #02987A;
+	color: #FFFFFF !important;
+	border: 1px solid #02987A;
 	float: left;
 	height: 27px;
 	border-radius: 4px;
@@ -2261,10 +2267,11 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
+	text-transform: uppercase;
 }
 .badge-approved{
-	color: #00D68F;
-	border: 1px solid #00D68F;
+	color: #04D68F !important;
+	border: 1px solid #04D68F;
 	float: left;
 	height: 27px;
 	border-radius: 4px;
@@ -2273,8 +2280,9 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
+	text-transform: uppercase;
 }
-.badge-discard{
+.badge-discard {
 	color: #FF3D71;
 	border: 1px solid #FF3D71;
 	float: left;
@@ -2285,6 +2293,7 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
+	text-transform: uppercase;
 }
 .badge-idea{
 	color: #222B45;
@@ -2297,9 +2306,10 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
+	text-transform: uppercase;
 }
 
-.badge-proposed{
+.badge-proposed {
 	color: #8F9BB3 !important;
 	border: 1px solid #8F9BB3;
 	float: left;
@@ -2310,10 +2320,11 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
-	width: 106px;
+	/*width: 106px;*/
+	text-transform: uppercase;
 }
 
-.badge-In-active{
+.badge-In-active {
 	color: #8F9BB3 !important;
 	border: 1px solid #8F9BB3;
 	float: left;
@@ -2325,10 +2336,12 @@ ul.dash-list-personas li:nth-child(3) {
 	line-height: 3px;
 	margin-top: 15px;
 	width: 85px;
+	text-transform: uppercase;
 }
-.badge-write{
-	color: #222B45;
-	border: 1px solid #222B45;
+.badge-write {
+	color: #0B9AFE !important;
+	border: 1px solid #0B9AFE !important;
+	border-top: 1px solid #0B9AFE !important;
 	float: left;
 	height: 27px;
 	border-radius: 4px;
@@ -2337,9 +2350,10 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
+	text-transform: uppercase;
 }
 
-.badge-active{
+.badge-active {
 	background: #00D68F;
 	color: #FFFFFF !important;
 	border: 1px solid #00D68F;
@@ -2352,6 +2366,7 @@ ul.dash-list-personas li:nth-child(3) {
 	line-height: 3px;
 	margin-top: 15px;
 	width: 85px;
+	text-transform: uppercase;
 }
 
 .add-project{
@@ -2438,7 +2453,7 @@ ul.dash-list-personas li:nth-child(3) {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-	background-color: #C5CEE0 !important;
+	background-color: rgba(197, 206, 224, 0.21) !important;
 }
 
 .customTrStyle > td {

@@ -30,7 +30,7 @@ $(document).ready(function(){
                     </div>
                     <div class="dashdropdown-projects">
                         <select name="project">
-                            <option style="color:#8992A3;" disabled="disabled" selected="selected">Select an Option</option>
+                            <option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
                             <option value="">All Projects</option>
                             @foreach($projects as $k => $v)
                                 <option value="{{$v->id}}">{{$v->project_name}}</option>
@@ -54,7 +54,7 @@ $(document).ready(function(){
                     </div>
                     <div class="dashdropdown-check">
                         <input type="checkbox" name="discarded" value="discard" @if($discarded == "discard") checked @endif> Show Discarded
-                        <button type="submit" class="dash-page-listactions" style="font-family:'Open Sans', sans-serif;font-weight:600;float:right;margin-left:34px;height:36px;margin-top:-4px;color:white;">SEARCH</button>
+                        <button type="submit" class="dash-page-listactions" style="font-family: 'Open Sans', sans-serif;font-weight: 600;float: right;height: 50px;margin-top: -18px;color: white;padding: 0 39px;margin-left: 17px;font-size: 11px;">SEARCH</button>
                     </div>
                 </div>
             </form>

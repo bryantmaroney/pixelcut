@@ -49,7 +49,7 @@
     @stack('cs')
     <style>
         td.badge-approved {
-            border-top: 1px solid #00D68F !important;
+            border-top: 1px solid #04D68F !important;
         }
         td.badge-proposed  {
             border-top: 1px solid #8F9BB3 !important;
@@ -58,14 +58,20 @@
             border-top: 1px solid #8F9BB3 !important;
         }
         td.badge-write  {
-            border-top: 1px solid #222B45 !important;
-        }
-        td.badge-write  {
-            border-top: 1px solid #222B45 !important;
+            border-top: 1px solid #0B9AFE !important;
         }
         td.badge-idea  {
             border-top: 1px solid #222B45 !important;
         }
+        td.badge-discard  {
+            border-top: 1px solid #FF3D71 !important;
+        }
+        td.badge-published {
+			border-top: 1px solid #02987A !important;
+		}
+		td.badge-ready {
+			border-top: 1px solid #FFAA00 !important;
+		}
     </style>
 </head>
 <body>
