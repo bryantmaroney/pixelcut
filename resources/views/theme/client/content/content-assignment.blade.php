@@ -105,7 +105,7 @@
 {{--						<textarea id="summernote" name="article"></textarea>--}}
 {{--				</div>--}}
 
-				<div class="team-addEditor" style="    width: 957px; !important;" >
+				<div class="team-addEditor" style="width:calc(100% - 48px);">
 					<textarea id="Froala" name="article">{{isset($article->article) ? $article->article :''}}</textarea>
 				</div>
 

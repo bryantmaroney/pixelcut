@@ -55,24 +55,26 @@
 			<label>CLIENT WEBSITE</label>
 			<input type="text" name="website" value="{{$project->client_website}}">
 		</div>
-		<div>
+		<div class="client-dash-project-manager-drop">
 			<label>PROJECT MANAGER</label>
 			<select class="addcontent-projectdrop" name="p_manager">
 				@foreach($projectManagers as $v)
 					<option value="{{$v->id}}" @if($v->id == $project->project_manager_id) selected @endif>{{$v->user_name}}</option>
 				@endforeach
 			</select>
+			<span></span>
 		</div>
-		<div>
-			<label>Status</label>
+		<div class="client-dash-status-drop">
+			<label>STATUS</label>
 			<select class="addcontent-projectdrop" name="status">
 				<option value="1" @if($project->status == 1) selected @endif>Active</option>
 				<option value="0" @if($project->status == 0) selected @endif>In Active</option>
 			</select>
+			<span></span>
 		</div>
 	</div>
 
-	<div class="add-project">
+	<div class="add-project client-dash-add-contact">
 		<label>POINTS OF CONTACT</label>
 		<input type="text" name='user_name' class="tags-look" value="{{$clientNames}}" readonly>
 {{--		<input type="text" name="user_name" placeholder="Search All Users" value="{{$clientNames}}">--}}
