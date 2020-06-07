@@ -57,6 +57,7 @@
 		<div>
 			<label>PROJECT MANAGER</label>
 			<select class="addcontent-projectdrop" name="p_manager">
+				<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
 				@foreach($projectManagers as $v)
 					<option value="{{$v->id}}" @if($v->id == $project->project_manager_id) selected @endif>{{$v->user_name}}</option>
 				@endforeach
@@ -65,6 +66,7 @@
 		<div>
 			<label>Status</label>
 			<select class="addcontent-projectdrop" name="status">
+				<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
 				<option value="1" @if($project->status == 1) selected @endif>Active</option>
 				<option value="0" @if($project->status == 0) selected @endif>In Active</option>
 			</select>

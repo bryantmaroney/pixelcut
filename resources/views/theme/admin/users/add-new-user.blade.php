@@ -19,6 +19,20 @@
 			</script>
 		@endforeach
 	@endif
+	
+<script>
+$(document).ready(function(){
+	$('.add-users-box div select').css('color','rgba(137, 146, 163, 0.4)');
+	$('.add-users-box div select').change(function() {
+	    var current = $(this).val();
+	    if (current != 'null') {
+	        $(this).css('color','#333');
+	    } else {
+	        $(this).css('color','#8992A3');
+	    }
+	});
+});
+</script>	
 	<div class="dash-contentarea">
 		<div class="dash-contentarea-wrapper">
 {{--			<div class="dash-page-title">Add New User</div>--}}
@@ -38,24 +52,26 @@
 					<div>
 						<label>ROLE*</label>
 						<select class="addcontent-projectdrop" name="is_admin" >
+							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
 							<option value="1" {{old('is_admin') == 1 ? 'selected' : ''}}>Admin</option>
 							<option value="0" {{old('is_admin') == 0 ? 'selected' : ''}}>Client</option>
 							<option value="2" {{old('is_admin') == 2 ? 'selected' : ''}}>Writter</option>
 						</select>
 					</div>
-					<div>
-						<label>EMAil ADDRESS*</label>
+					<div style="margin-top: 20px">
+						<label>EMAIL ADDRESS*</label>
 						<input type="text" placeholder="john.doe@exmaple.com" name="email" value="{{old('email')}}">
 					</div>
 					<div style="margin-top: 20px">
-						<label>Password*</label>
+						<label>PASSWORD*</label>
 						<input type="password" name="password" >
 					</div>
 					<div style="margin-top: 20px">
-						<label>Status*</label>
+						<label>STATUS*</label>
                         <select class="addcontent-projectdrop" name="status" >
-                            <option value="1" selected>Active</option>
-                            <option value="0" >Inactive</option>
+	                        <option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
                         </select>
 					</div>
 				</div>

@@ -44,16 +44,16 @@
                             <option value="2" @if($user->is_admin == 2) selected @endif>Writter</option>
                         </select>
                     </div>
-                    <div>
-                        <label>EMAil ADDRESS*</label>
+                    <div style="margin-top: 20px">
+                        <label>EMAIL ADDRESS*</label>
                         <input type="text"  name="email"  value="{{$user->email}}">
                     </div>
                     <div style="margin-top: 20px">
-                        <label>Password*</label>
+                        <label>PASSWORD*</label>
                         <input type="password" name="password" >
                     </div>
                     <div style="margin-top: 20px">
-                        <label>Status*</label>
+                        <label>STATUS*</label>
                         <select class="addcontent-projectdrop" name="status" >
                             <option value="1" @if($user->status == 1) selected @endif >Active</option>
                             <option value="0" @if($user->status == 0) selected @endif >In-Active</option>

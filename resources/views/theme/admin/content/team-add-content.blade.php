@@ -23,6 +23,41 @@
 					</script>
 				@endforeach
 			@endif
+			
+			<script>
+			$(document).ready(function(){
+				$('.team-addcontent-titlebox div select').css('color','#8992A3');
+				$('.team-addcontent-titlebox div select').change(function() {
+				    var current = $(this).val();
+				    if (current != 'null') {
+				        $(this).css('color','#333');
+				    } else {
+				        $(this).css('color','#8992A3');
+				    }
+				});
+				
+				$('.team-addcontent-publishpage div select').css('color','#8992A3');
+				$('.team-addcontent-publishpage div select').change(function() {
+				    var current = $(this).val();
+				    if (current != 'null') {
+				        $(this).css('color','#333');
+				    } else {
+				        $(this).css('color','#8992A3');
+				    }
+				});
+				
+				$('.team-addcontent-leftkeywords div select').css('color','#8992A3');
+				$('.team-addcontent-leftkeywords div select').change(function() {
+				    var current = $(this).val();
+				    if (current != 'null') {
+				        $(this).css('color','#333');
+				    } else {
+				        $(this).css('color','#8992A3');
+				    }
+				});
+			});
+			</script>
+			
 			<form method="post" action="{{route('contentSave')}}"><!-- start form -->
 				@csrf
 				{{--				<div class="team-addcontent-requestbutton">REQUEST TOPIC APPROVAL</div>--}}
@@ -37,7 +72,7 @@
 					<div>
 						<label>PROJECT*</label>
 						<select class="addcontent-projectdrop" name="project" >
-							<option value="">Select a project</option>
+							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select a Project</option>
 							@foreach($projects as $k => $v)
 								<option value="{{$v->id}}" {{old('project') == $v->id ? 'selected' : ''}}>{{$v->project_name}}</option>
 							@endforeach
@@ -46,6 +81,7 @@
 					<div>
 						<label>STATUS*</label>
 						<select class="addcontent-statusdrop" name="status">
+							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select Status</option>
 							<option value="8" {{old('status') == 8 ? 'selected' : ''}} >Idea</option>
 							<option value="1" {{old('status') == 1 ? 'selected' : ''}}>Topic Proposed</option>
 							<option value="2" {{old('status') == 2 ? 'selected' : ''}}>Topic Approved</option>
@@ -142,6 +178,7 @@
 						<div>
 							<label>CONTENT TACTIC</label>
 							<select name="tatic">
+								<option style="color:#8992A3 !important;" disabled="disabled" selected="selected" value="null">Select Tactic</option>
 								<option value="1" {{old('tatic') == 1 ? 'selected' : ''}}>Comparison Guide</option>
 								<option value="2" {{old('tatic') == 2 ? 'selected' : ''}}>Gated Content</option>
 								<option value="3" {{old('tatic') == 3 ? 'selected' : ''}}>Interview</option>
@@ -192,6 +229,7 @@
 					<div>
 						<label>WRITER</label>
 						<select name="writter">
+							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select a Writer</option>
 							@foreach($writers as $k => $v)
 								<option value="{{$v->id}}" {{old('writter') == $v->id? 'selected' : ''}} >{{$v->user_name}}</option>
 							@endforeach
@@ -223,7 +261,8 @@
 						<textarea type="text" name="meta_discription" placeholder="Meta description" onkeyup="countChar(this)">{{old('meta_discription')}}</textarea>
 					</div>
 				</div>
-
+				
+				<!--
 				<div class="team-addcontent-persona">
 					<div>
 						<label>PERSONA</label>
@@ -252,6 +291,7 @@
 						</select>
 					</div>
 				</div>
+				-->
 
 				<div class="team-addcontent-bottombuttons">
 					<div>

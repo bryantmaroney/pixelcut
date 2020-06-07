@@ -3,7 +3,7 @@ body {
 	margin: 0;
 	background: #f9fafb;
 	font-family: 'Open Sans', sans-serif !important;
- }
+}
 
 .logo-wrapper {
 	position: absolute;
@@ -229,6 +229,7 @@ ul.dash-sidebarlist li {
 	color: #222B45;
 	font-weight: 600;
 	line-height: 48px;
+	cursor: pointer;
 }
 
 ul.dash-sidebarlist li.active, ul.dash-sidebarlist li:hover {
@@ -526,6 +527,11 @@ ul.dash-sidebarlist li.active .usericon, ul.dash-sidebarlist li:hover .usericon 
 	left: 6px;
 }
 
+.dashdropdown-check button:hover {
+	background: #222B45;
+	border: 1px solid #222B45;
+}
+
 .dash-page-listarea {
 	float: left;
 	width: 100%;
@@ -715,6 +721,13 @@ ul.dash-page-listtitles li:nth-child(6) {
 	padding: 0 20px;
 	color: #FFFFFF;
 	cursor: pointer;
+}
+
+a.dash-page-listactions:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+	background: #1D2B3F;
+	border: 1px solid #1D2B3F;
 }
 
 .dash-page-listarea ul li ul li.list-red {
@@ -998,6 +1011,7 @@ input.addcontent-wordcount {
 	float: left;
 	background: #F7F9FC;
 	font-size: 14px;
+	border: 1px solid #E4E9F2;
 }
 
 .team-addcontent-leftkeywords input {
@@ -2458,6 +2472,14 @@ ul.dash-list-personas li:nth-child(3) {
 
 .customTrStyle > td {
     vertical-align: middle !important;
+}
+
+.select-field-color {
+	color: rgba(137, 146, 163, 0.4) !important;
+}
+
+select {
+	font-family: 'Open Sans', sans-serif !important;
 }
 
 

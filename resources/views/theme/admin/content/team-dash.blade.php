@@ -6,7 +6,7 @@
 
 <script>
 $(document).ready(function(){
-	$('.dash-page-searcharea .dashdropdown-projects select, .dash-page-searcharea .dashdropdown-status select').css('color','#8992A3');
+	$('.dash-page-searcharea .dashdropdown-projects select, .dash-page-searcharea .dashdropdown-status select').css('color','rgba(137, 146, 163, 0.4)');
 	$('.dash-page-searcharea .dashdropdown-projects select, .dash-page-searcharea .dashdropdown-status select').change(function() {
 	    var current = $(this).val();
 	    if (current != 'null') {
@@ -40,7 +40,7 @@ $(document).ready(function(){
                     </div>
                     <div class="dashdropdown-status">
                         <select name="status" style="width: calc(185px - 10px);">
-                            <option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
+                            <option style="color: rgba(137, 146, 163, 0.4) !important;" disabled="disabled" selected="selected" value="null">Select an Option</option>
                             <option value="">All Statuses</option>
                             <option value="1">Topic Proposed</option>
                             <option value="2">Topic Approved</option>
