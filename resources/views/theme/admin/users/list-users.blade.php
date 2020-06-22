@@ -45,7 +45,7 @@
                     </div>
                     <div class="dashdropdown-check">
                         <input type="checkbox" name="active" value="0"> Show Inactive
-                        <button type="submit" class="dash-page-listactions" style="float:right;margin-left:34px;height:50px;margin-top: -11px;color:white;padding:0 35px;font-size:12px;">Search</button>
+                        <button type="submit" class="dash-page-listactions" style="float:right;margin-left:34px;height:50px;margin-top: -18px;color:white;padding:0 35px;font-size:12px;">Search</button>
                     </div>
                 </div>
             </form>
