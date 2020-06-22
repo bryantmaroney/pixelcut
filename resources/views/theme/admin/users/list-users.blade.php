@@ -23,26 +23,6 @@
             width: 252px;
         }
     </style>
-    
-<script>
-$(document).ready(function(){
-	$('.dash-page-searcharea .dashdropdown-projects select').css('color','rgba(137, 146, 163, 0.4)');
-	$('.dash-page-searcharea .dashdropdown-projects select').change(function() {
-	    var current = $(this).val();
-	    if (current != 'null') {
-	        $(this).css('color','#333');
-	    } else {
-	        $(this).css('color','#8992A3');
-	    }
-	});
-	
-	// show/hide inactive users
-	$('.badge-In-active').parent().hide();
-	$('.dashdropdown-check input').click(function(){
-	    $('.badge-In-active').parent().toggle();
-	});
-});
-</script>    
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
 {{--            <div class="dash-page-title">USERS</div>--}}
@@ -57,7 +37,7 @@ $(document).ready(function(){
                     </div>
                     <div class="dashdropdown-projects">
                         <select name="role">
-                            <option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select a Role</option>
+                            <option value="" >Select Role</option>
                             <option value="1">Admin</option>
                             <option value="0">User</option>
                         </select>
@@ -65,7 +45,7 @@ $(document).ready(function(){
                     </div>
                     <div class="dashdropdown-check">
                         <input type="checkbox" name="active" value="0"> Show Inactive
-                        <button type="submit" class="dash-page-listactions" style="font-family: 'Open Sans', sans-serif;font-weight: 600;float: right;height: 50px;margin-top: -18px;color: white;padding: 0 39px;margin-left: 17px;font-size: 11px;">SEARCH</button>
+                        <button type="submit" class="dash-page-listactions" style="float:right;margin-left:34px;height:50px;margin-top: -11px;color:white;padding:0 35px;font-size:12px;">Search</button>
                     </div>
                 </div>
             </form>
@@ -111,7 +91,7 @@ $(document).ready(function(){
                                         @if($v->status == 0)
                                             <a href="{{route('blockUser',[$v->id,1])}}"  class="dash-page-listactions ml-1"> ACTIVE</a>
                                         @else
-                                            <a href="{{route('blockUser',[$v->id,0])}}"  class="dash-page-listactions ml-1"> DEACTIVATE</a>
+                                            <a href="{{route('blockUser',[$v->id,0])}}"  class="dash-page-listactions ml-1"> DEACTIVE</a>
                                         @endif
                                     @endif
                                 </div>
@@ -169,7 +149,7 @@ $(document).ready(function(){
 {{--                                            @if($v->status == 0)--}}
 {{--                                                <div class="dash-page-listactions" onclick="window.location.href='{{route('blockUser',[$v->id,1])}}'">ACTIVE</div>--}}
 {{--                                            @else--}}
-{{--                                                <div class="dash-page-listactions" onclick="window.location.href='{{route('blockUser',[$v->id,0])}}'" >DEACTIVATE</div>--}}
+{{--                                                <div class="dash-page-listactions" onclick="window.location.href='{{route('blockUser',[$v->id,0])}}'" >DEACTIVE</div>--}}
 {{--                                            @endif--}}
 {{--                                        @endif--}}
 {{--                                    </li>--}}

@@ -4,6 +4,16 @@ body {
 	background: #f9fafb;
 	font-family: 'Open Sans', sans-serif !important;
  }
+ 
+ a {
+	 text-decoration: none;
+ }
+ 
+ input:focus, input:hover, textarea:focus, textarea:hover, select:focus, select:hover, tags:focus, .tagify:focus, tags:hover, .tagify:hover {
+	box-shadow: 0 2px 10px 0 rgba(157,157,157,0.5) !important;
+	border: 1px solid #3366FF !important;
+	outline: none;
+}
 
 .logo-wrapper {
 	position: absolute;
@@ -229,6 +239,7 @@ ul.dash-sidebarlist li {
 	color: #222B45;
 	font-weight: 600;
 	line-height: 48px;
+	cursor: pointer;
 }
 
 ul.dash-sidebarlist li.active, ul.dash-sidebarlist li:hover {
@@ -701,6 +712,11 @@ ul.dash-page-listtitles li:nth-child(6) {
 	cursor: pointer;
 }
 
+button.dash-page-listactions {
+	text-transform: uppercase;
+	font-weight: 900;
+}
+
 .dash-page-listarea ul li ul li.list-red {
 	color: #FF3D71;
 }
@@ -927,6 +943,9 @@ input.addcontent-wordcount {
 	box-shadow: 0px 0px 0px 1px #3366FF;
 	height:13px !important;
 	width: 13px !important;
+	margin-top: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 .team-addcontent-typebox div label.css-label {
@@ -1143,6 +1162,10 @@ input.addcontent-wordcount {
     font-size: 14px;
 }
 
+.team-addcontent-publishpage div input::placeholder {
+	color: #8F9BB3;
+}
+
 .team-addcontent-publishpage div input:hover {
 	border: 1px solid #CCCCCC;
 }
@@ -1182,6 +1205,12 @@ input.addcontent-wordcount {
 
 .team-addcontent-publishpage div select option[data-default] {
 	color: #C7CDD9;
+}
+
+.team-addcontent-publishpage div select:focus {
+	box-shadow: 0 2px 10px 0 rgba(157,157,157,0.5) !important;
+	border: 1px solid #3366FF !important;
+	outline: none;
 }
 
 .team-addcontent-publishpage div:last-child {
@@ -1781,6 +1810,12 @@ ul.list-users-page li ul li .dash-page-listactions:last-child {
     font-size: 14px;
 }
 
+.add-project-name div input:focus {
+	box-shadow: 0 2px 10px 0 rgba(157,157,157,0.5) !important;
+	border: 1px solid #3366FF !important;
+	outline: none;
+}
+
 .add-project-name div:nth-child(1) {
 	width: calc(100% - 750px);
 }
@@ -2366,6 +2401,12 @@ ul.dash-list-personas li:nth-child(3) {
 	height: 93px;
 }
 
+.team-addcontent-targetKeywords textarea:focus {
+	box-shadow: 0 2px 10px 0 rgba(157,157,157,0.5) !important;
+	border: 1px solid #3366FF !important;
+	outline: none;
+}
+
 .team-addEditor {
 	float: left;
 	width: calc(100% - 10px);
@@ -2417,12 +2458,37 @@ ul.dash-list-personas li:nth-child(3) {
 	font-weight: 600 !important;
 }
 
-.text-red{
+.text-red {
 	color: #FF3D71 !important;
 }
 
-.text-orange{
+.text-orange {
 	color: #FFAA00 !important;
+}
+
+.add-project label {
+	float: left;
+    font-size: 12px;
+    color: #8992A3;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.add-project tags {
+	float: left;
+    width: 100%;
+    height: 172px;
+    padding: 12px;
+    background: #F7F9FC;
+    border: 1px solid #E4E9F2;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.add-project tags:focus, .add-project .tagify:focus {
+	box-shadow: 0 2px 10px 0 rgba(157,157,157,0.5) !important;
+	border: 1px solid #3366FF !important;
+	outline: none;
 }
 
 

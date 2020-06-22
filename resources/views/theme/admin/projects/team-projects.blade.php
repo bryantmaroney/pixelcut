@@ -11,21 +11,6 @@
             width: 81px;
         }
     </style>
-
-<script>
-$(document).ready(function(){
-	$('.dash-page-searcharea .dashdropdown-projects select, .dash-page-searcharea .dashdropdown-status select').css('color','rgba(137, 146, 163, 0.4)');
-	$('.dash-page-searcharea .dashdropdown-projects select, .dash-page-searcharea .dashdropdown-status select').change(function() {
-	    var current = $(this).val();
-	    if (current != 'null') {
-	        $(this).css('color','#333');
-	    } else {
-	        $(this).css('color','#8992A3');
-	    }
-	});
-});
-</script>
-    
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
 {{--            <div class="dash-page-title">PROJECTS</div>--}}
@@ -39,7 +24,6 @@ $(document).ready(function(){
                     </div>
                     <div class="dashdropdown-projects">
                         <select name="manager">
-	                        <option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select a PM</option>
                             <option value="">All Project Managers</option>
                             @foreach($projectManagers as $v)
                                 <option value="{{$v->id}}">{{$v->user_name}}</option>
@@ -49,16 +33,15 @@ $(document).ready(function(){
                     </div>
                     <div class="dashdropdown-status">
                         <select name="status">
-	                        <option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select Status</option>
                             <option value="">All Statuses</option>
-                            <option value="1">Active</option>
+                            <option value="1" @if($status == 1) selected  @endif>Active</option>
                             <option value="0">Inactive</option>
                         </select>
                         <span></span>
                     </div>
                     <div class="dashdropdown-check">
 {{--                        <input type="checkbox" name="discarded"  value="0"> Show Inactive--}}
-                        <button type="submit" class="dash-page-listactions" style="font-family: 'Open Sans', sans-serif;font-weight: 600;float: right;height: 50px;margin-top: -18px;color: white;padding: 0 39px;margin-left: 17px;font-size: 11px;">SEARCH</button>
+                        <button type="submit" class="dash-page-listactions" style="float: right;     margin-left: 34px;     height: 36px;     margin-top: -4px;  color: white;">Search</button>
                     </div>
                 </div>
             </form>

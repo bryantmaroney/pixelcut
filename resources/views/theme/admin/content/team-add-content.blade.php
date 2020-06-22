@@ -6,7 +6,7 @@
 	<div class="dash-contentarea">
 		<div class="dash-contentarea-wrapper">
 {{--			<div class="dash-page-title">Add Content</div>--}}
-			<div class="dash-page-title">Add Content</div>
+			<div class="dash-page-title">Team Member Dashboard</div>
 			@if ($errors->any())
 				@foreach ($errors->all() as $error)
 					<script>
@@ -23,41 +23,6 @@
 					</script>
 				@endforeach
 			@endif
-			
-			<script>
-			$(document).ready(function(){
-				$('.team-addcontent-titlebox div select').css('color','#8992A3');
-				$('.team-addcontent-titlebox div select').change(function() {
-				    var current = $(this).val();
-				    if (current != 'null') {
-				        $(this).css('color','#333');
-				    } else {
-				        $(this).css('color','#8992A3');
-				    }
-				});
-				
-				$('.team-addcontent-publishpage div select').css('color','#8992A3');
-				$('.team-addcontent-publishpage div select').change(function() {
-				    var current = $(this).val();
-				    if (current != 'null') {
-				        $(this).css('color','#333');
-				    } else {
-				        $(this).css('color','#8992A3');
-				    }
-				});
-				
-				$('.team-addcontent-leftkeywords div select').css('color','#8992A3');
-				$('.team-addcontent-leftkeywords div select').change(function() {
-				    var current = $(this).val();
-				    if (current != 'null') {
-				        $(this).css('color','#333');
-				    } else {
-				        $(this).css('color','#8992A3');
-				    }
-				});
-			});
-			</script>
-			
 			<form method="post" action="{{route('contentSave')}}"><!-- start form -->
 				@csrf
 				{{--				<div class="team-addcontent-requestbutton">REQUEST TOPIC APPROVAL</div>--}}
@@ -72,28 +37,25 @@
 					<div>
 						<label>PROJECT*</label>
 						<select class="addcontent-projectdrop" name="project" >
-							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select a Project</option>
+							<option value="">Select a project</option>
 							@foreach($projects as $k => $v)
 								<option value="{{$v->id}}" {{old('project') == $v->id ? 'selected' : ''}}>{{$v->project_name}}</option>
 							@endforeach
 						</select>
-						<span></span>
 					</div>
 					<div>
 						<label>STATUS*</label>
 						<select class="addcontent-statusdrop" name="status">
-							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select Status</option>
-							<option value="8" {{old('status') == 8 ? 'selected' : ''}} >Idea</option>
 							<option value="1" {{old('status') == 1 ? 'selected' : ''}}>Topic Proposed</option>
 							<option value="2" {{old('status') == 2 ? 'selected' : ''}}>Topic Approved</option>
 							<option value="3" {{old('status') == 3 ? 'selected' : ''}}>Writing</option>
-							<option value="5" {{old('status') == 5 ? 'selected' : ''}}>Ready To Review</option>
 							<option value="4" {{old('status') == 4 ? 'selected' : ''}}>Client Reviewing</option>
+							<option value="5" {{old('status') == 5 ? 'selected' : ''}}>Ready To Review</option>
 							<option value="6" {{old('status') == 6 ? 'selected' : ''}}>Ready To Publish</option>
-							<option value="7" {{old('status') == 7 ? 'selected' : ''}}>Published</option>
-							<!--<option value="9" {{old('status') == 9 ? 'selected' : ''}}>Assign To Writer</option>-->
+							<option value="7" {{old('status') == 7 ? 'selected' : ''}}>Publish</option>
+							<option value="8" {{old('status') == 8 ? 'selected' : ''}} >Idea</option>
+							<option value="9" {{old('status') == 9 ? 'selected' : ''}}>Assign To Writer</option>
 						</select>
-						<span></span>
 					</div>
 					<div>
 						<label>MINIMUM WORD COUNT*</label>
@@ -180,7 +142,6 @@
 						<div>
 							<label>CONTENT TACTIC</label>
 							<select name="tatic">
-								<option style="color:#8992A3 !important;" disabled="disabled" selected="selected" value="null">Select Tactic</option>
 								<option value="1" {{old('tatic') == 1 ? 'selected' : ''}}>Comparison Guide</option>
 								<option value="2" {{old('tatic') == 2 ? 'selected' : ''}}>Gated Content</option>
 								<option value="3" {{old('tatic') == 3 ? 'selected' : ''}}>Interview</option>
@@ -194,9 +155,7 @@
 								<option value="11" {{old('tatic') == 11 ? 'selected' : ''}}>Infographic</option>
 								<option value="12" {{old('tatic') == 12 ? 'selected' : ''}}>Template</option>
 								<option value="13" {{old('tatic') == 13 ? 'selected' : ''}}>Tool</option>
-								<option value="14" {{old('tatic') == 14 ? 'selected' : ''}}>Other</option>
 							</select>
-							<span></span>
 						</div>
 						<div class="team-addcontent-targetKeywords">
 							<label>TARGET KEYWORD</label>
@@ -232,12 +191,10 @@
 					<div>
 						<label>WRITER</label>
 						<select name="writter">
-							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select a Writer</option>
 							@foreach($writers as $k => $v)
 								<option value="{{$v->id}}" {{old('writter') == $v->id? 'selected' : ''}} >{{$v->user_name}}</option>
 							@endforeach
 						</select>
-						<span></span>
 {{--						<span></span>--}}
 					</div>
 				</div>
@@ -265,9 +222,8 @@
 						<textarea type="text" name="meta_discription" placeholder="Meta description" onkeyup="countChar(this)">{{old('meta_discription')}}</textarea>
 					</div>
 				</div>
-				
-				<!--
-				<div class="team-addcontent-persona">
+
+				<div class="team-addcontent-persona" style="display:none;">
 					<div>
 						<label>PERSONA</label>
 						<select name="persona">
@@ -295,7 +251,6 @@
 						</select>
 					</div>
 				</div>
-				-->
 
 				<div class="team-addcontent-bottombuttons">
 					<div>
