@@ -3,7 +3,7 @@ body {
 	margin: 0;
 	background: #f9fafb;
 	font-family: 'Open Sans', sans-serif !important;
-}
+ }
 
 .logo-wrapper {
 	position: absolute;
@@ -229,7 +229,6 @@ ul.dash-sidebarlist li {
 	color: #222B45;
 	font-weight: 600;
 	line-height: 48px;
-	cursor: pointer;
 }
 
 ul.dash-sidebarlist li.active, ul.dash-sidebarlist li:hover {
@@ -283,9 +282,7 @@ ul.dash-sidebarlist li.active .usericon, ul.dash-sidebarlist li:hover .usericon 
 	width: 100%;
 	height: 64px;
 	background: #FFFFFF;
-	box-shadow: 0 2px 13px 0 rgba(0,0,0,0.09);
-	position: relative;
-	z-index: 9;
+	box-shadow: 0 2px 13px 0 rgba(0,0,0,0.07);
 }
 
 .dash-contentarea {
@@ -294,7 +291,6 @@ ul.dash-sidebarlist li.active .usericon, ul.dash-sidebarlist li:hover .usericon 
 	height: 100%;
 	position: absolute;
 	top:64px;
-	background: #F9FAFB;
 }
 
 .dash-header-title {
@@ -439,20 +435,8 @@ ul.dash-sidebarlist li.active .usericon, ul.dash-sidebarlist li:hover .usericon 
 }
 
 .dash-page-searcharea .dashdropdown-projects select option {
-	/*color: #8F9BB3;*/
+	color: #8F9BB3;
 	opacity: 0.4;
-}
-
-.dash-page-searcharea .dashdropdown-projects select option:disabled {
-	color: #8F9BB3 !important;
-}
-
-.dash-page-searcharea .dashdropdown-projects select[disabled='disabled'] {
-    color: red !important;
-}
-
-.dash-page-searcharea .dashdropdown-projects select option[disabled='disabled'] {
-    color: red !important;
 }
 
 .dash-page-searcharea .dashdropdown-status select {
@@ -481,24 +465,14 @@ ul.dash-sidebarlist li.active .usericon, ul.dash-sidebarlist li:hover .usericon 
     margin-top: 21px;
 }
 
-.team-addcontent-titlebox div span {
-	background: url('../images/clear-downarrow.png');
-	width: 15px;
-	height: 10px;
-	display: inline-block;
-	margin-left: -46px;
-    margin-top: 41px;
-}
-
 .dashdropdown-check {
 	float: left;
 	margin-left: 19px;
 	font-size: 13px;
 	color: #222B45;
 	font-family: 'Open Sans', sans-serif;
-	margin-top: 18px;
-    font-weight: 600;
-    margin-bottom: -7px;
+	margin-top: 11px;
+    font-weight: 600;;
 }
 
 .dashdropdown-check input[type=checkbox] {
@@ -534,11 +508,6 @@ ul.dash-sidebarlist li.active .usericon, ul.dash-sidebarlist li:hover .usericon 
 	position: absolute;
 	top: 2px;
 	left: 6px;
-}
-
-.dashdropdown-check button:hover {
-	background: #222B45;
-	border: 1px solid #222B45;
 }
 
 .dash-page-listarea {
@@ -732,13 +701,6 @@ ul.dash-page-listtitles li:nth-child(6) {
 	cursor: pointer;
 }
 
-a.dash-page-listactions:hover {
-	color: #FFFFFF;
-	text-decoration: none;
-	background: #1D2B3F;
-	border: 1px solid #1D2B3F;
-}
-
 .dash-page-listarea ul li ul li.list-red {
 	color: #FF3D71;
 }
@@ -873,9 +835,6 @@ input.addcontent-wordcount {
 	clear: left;
 	margin-right: 21px;
 	font-size: 14px;
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 .team-addcontent-titlebox input {
@@ -1023,20 +982,6 @@ input.addcontent-wordcount {
 	float: left;
 	background: #F7F9FC;
 	font-size: 14px;
-	border: 1px solid #E4E9F2;
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding-left: 10px;
-}
-
-.team-addcontent-leftkeywords span {
-	background: url('../images/clear-downarrow.png');
-    width: 15px;
-    height: 10px;
-    display: inline-block;
-    margin-left: -25px;
-    margin-top: 43px;
 }
 
 .team-addcontent-leftkeywords input {
@@ -1231,8 +1176,8 @@ input.addcontent-wordcount {
     width: 15px;
     height: 10px;
     display: inline-block;
-    margin-left: -27px;
-    margin-top: 42px;
+    margin-left: -30px;
+    margin-top: 41px;
 }
 
 .team-addcontent-publishpage div select option[data-default] {
@@ -2281,8 +2226,7 @@ ul.dash-list-personas li:nth-child(3) {
 }
 .badge-ready{
 	background: #FFAA00;
-	color: #FFFFFF !important;
-	text-transform: uppercase;
+	color: #FFFFFF;
 	border: 1px solid #FFAA00;
 	float: left;
 	height: 27px;
@@ -2292,12 +2236,11 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
-	text-transform: uppercase;
 }
 .badge-published{
-	background: #02987A;
-	color: #FFFFFF !important;
-	border: 1px solid #02987A;
+	background: #00997A;
+	color: #FFFFFF;
+	border: 1px solid #00997A;
 	float: left;
 	height: 27px;
 	border-radius: 4px;
@@ -2306,11 +2249,10 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
-	text-transform: uppercase;
 }
 .badge-approved{
-	color: #04D68F !important;
-	border: 1px solid #04D68F;
+	color: #00D68F;
+	border: 1px solid #00D68F;
 	float: left;
 	height: 27px;
 	border-radius: 4px;
@@ -2319,9 +2261,8 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
-	text-transform: uppercase;
 }
-.badge-discard {
+.badge-discard{
 	color: #FF3D71;
 	border: 1px solid #FF3D71;
 	float: left;
@@ -2332,7 +2273,6 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
-	text-transform: uppercase;
 }
 .badge-idea{
 	color: #222B45;
@@ -2345,10 +2285,9 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
-	text-transform: uppercase;
 }
 
-.badge-proposed {
+.badge-proposed{
 	color: #8F9BB3 !important;
 	border: 1px solid #8F9BB3;
 	float: left;
@@ -2359,11 +2298,10 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
-	/*width: 106px;*/
-	text-transform: uppercase;
+	width: 106px;
 }
 
-.badge-In-active {
+.badge-In-active{
 	color: #8F9BB3 !important;
 	border: 1px solid #8F9BB3;
 	float: left;
@@ -2375,12 +2313,10 @@ ul.dash-list-personas li:nth-child(3) {
 	line-height: 3px;
 	margin-top: 15px;
 	width: 85px;
-	text-transform: uppercase;
 }
-.badge-write {
-	color: #0B9AFE !important;
-	border: 1px solid #0B9AFE !important;
-	border-top: 1px solid #0B9AFE !important;
+.badge-write{
+	color: #222B45;
+	border: 1px solid #222B45;
 	float: left;
 	height: 27px;
 	border-radius: 4px;
@@ -2389,10 +2325,9 @@ ul.dash-list-personas li:nth-child(3) {
 	text-align: center;
 	line-height: 3px;
 	margin-top: 15px;
-	text-transform: uppercase;
 }
 
-.badge-active {
+.badge-active{
 	background: #00D68F;
 	color: #FFFFFF !important;
 	border: 1px solid #00D68F;
@@ -2405,7 +2340,6 @@ ul.dash-list-personas li:nth-child(3) {
 	line-height: 3px;
 	margin-top: 15px;
 	width: 85px;
-	text-transform: uppercase;
 }
 
 .add-project{
@@ -2489,206 +2423,6 @@ ul.dash-list-personas li:nth-child(3) {
 
 .text-orange{
 	color: #FFAA00 !important;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-	background-color: rgba(197, 206, 224, 0.21) !important;
-}
-
-.customTrStyle > td {
-    vertical-align: middle !important;
-}
-
-.select-field-color {
-	color: rgba(137, 146, 163, 0.4) !important;
-}
-
-select {
-	font-family: 'Open Sans', sans-serif !important;
-}
-
-.add-project-project-manager-drop span {
-	background: url('../images/clear-downarrow.png');
-    width: 15px;
-    height: 10px;
-    display: inline-block;
-    margin-left: -45px;
-    margin-top: 40px;
-}
-
-.add-project-project-manager-drop select {
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.add-project-status-drop span {
-	background: url('../images/clear-downarrow.png');
-    width: 15px;
-    height: 10px;
-    display: inline-block;
-    margin-left: -45px;
-    margin-top: 40px;
-}
-
-.add-project-status-drop select {
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.add-points-of-contact label {
-	float: left;
-    font-size: 12px;
-    color: #8992A3;
-    font-weight: 600;
-    margin-bottom: 2px;
-}
-
-.add-points-of-contact tags {
-	float: left;
-    /*height: 46px;*/
-    height: 172px;
-    background: #F7F9FC;
-    border: 1px solid #E4E9F2;
-    border-radius: 4px;
-    margin-right: 21px;
-    clear: left;
-    padding: 0 10px;
-    font-size: 14px;
-    width: 100%;
-    padding-top: 4px;
-}
-
-.add-users-box div select {
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.add-users-box div span {
-	background: url('../images/clear-downarrow.png');
-    width: 15px;
-    height: 10px;
-    display: inline-block;
-    margin-left: -45px;
-    margin-top: 40px;
-}
-
-.edit-project-project-manager select {
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.edit-project-project-manager span {
-	background: url('../images/clear-downarrow.png');
-    width: 15px;
-    height: 10px;
-    display: inline-block;
-    margin-left: -45px;
-    margin-top: 40px;
-}
-
-.edit-project-status select {
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.edit-project-status span {
-	background: url('../images/clear-downarrow.png');
-    width: 15px;
-    height: 10px;
-    display: inline-block;
-    margin-left: -45px;
-    margin-top: 40px;
-}
-
-.edit-project-add-contact tags {
-	float: left;
-    height: 172px;
-    background: #F7F9FC;
-    border: 1px solid #E4E9F2;
-    border-radius: 4px;
-    margin-right: 21px;
-    clear: left;
-    padding: 0 10px;
-    font-size: 14px;
-    width: 100%;
-    padding-top: 10px;
-}
-
-.edit-project-add-contact label {
-	float: left;
-    font-size: 12px;
-    color: #8992A3;
-    font-weight: 600;
-    margin-bottom: 2px;
-}
-
-.client-dash-project-manager-drop span {
-	background: url('../images/clear-downarrow.png');
-    width: 15px;
-    height: 10px;
-    display: inline-block;
-    margin-left: -45px;
-    margin-top: 40px;
-}
-
-.client-dash-project-manager-drop select {
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.client-dash-status-drop span {
-	background: url('../images/clear-downarrow.png');
-    width: 15px;
-    height: 10px;
-    display: inline-block;
-    margin-left: -45px;
-    margin-top: 40px;
-}
-
-.client-dash-status-drop select {
-	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.client-dash-add-contact tags {
-	float: left;
-    height: 172px;
-    background: #F7F9FC;
-    border: 1px solid #E4E9F2;
-    border-radius: 4px;
-    margin-right: 21px;
-    clear: left;
-    padding: 0 10px;
-    font-size: 14px;
-    width: 100%;
-    padding-top: 10px;
-}
-
-.client-dash-add-contact label {
-	float: left;
-    font-size: 12px;
-    color: #8992A3;
-    font-weight: 600;
-    margin-bottom: 2px;
-}
-
-.writer-dash-search-button button {
-	font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    float: right;
-    height: 50px;
-    margin-top: -18px;
-    color: white;
-    padding: 0 39px;
-    margin-left: 17px;
-    font-size: 11px;
 }
 
 
