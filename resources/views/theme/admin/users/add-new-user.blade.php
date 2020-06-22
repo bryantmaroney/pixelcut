@@ -52,7 +52,7 @@ $(document).ready(function(){
 					<div>
 						<label>ROLE*</label>
 						<select class="addcontent-projectdrop" name="is_admin" >
-							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
+							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select a Role</option>
 							<!--
 							<option value="1" {{old('is_admin') == 1 ? 'selected' : ''}}>Admin</option>
 							<option value="0" {{old('is_admin') == 0 ? 'selected' : ''}}>Client</option>
@@ -75,7 +75,7 @@ $(document).ready(function(){
 					<div style="margin-top: 20px">
 						<label>STATUS*</label>
                         <select class="addcontent-projectdrop" name="status" >
-	                        <option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
+	                        <option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select Status</option>
                             <option value="1">Active</option>
                             <option value="0">Inactive</option>
                         </select>

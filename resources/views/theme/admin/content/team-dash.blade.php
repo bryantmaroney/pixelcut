@@ -30,7 +30,7 @@ $(document).ready(function(){
                     </div>
                     <div class="dashdropdown-projects">
                         <select name="project">
-                            <option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
+                            <option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select a Project</option>
                             <option value="">All Projects</option>
                             @foreach($projects as $k => $v)
                                 <option value="{{$v->id}}">{{$v->project_name}}</option>
@@ -40,7 +40,7 @@ $(document).ready(function(){
                     </div>
                     <div class="dashdropdown-status">
                         <select name="status" style="width: calc(185px - 10px);">
-                            <option style="color: rgba(137, 146, 163, 0.4) !important;" disabled="disabled" selected="selected" value="null">Select an Option</option>
+                            <option style="color: rgba(137, 146, 163, 0.4) !important;" disabled="disabled" selected="selected" value="null">Select Status</option>
                             <option value="">All Statuses</option>
                             <option value="1">Topic Proposed</option>
                             <option value="2">Topic Approved</option>

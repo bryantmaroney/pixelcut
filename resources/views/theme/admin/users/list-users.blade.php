@@ -35,6 +35,12 @@ $(document).ready(function(){
 	        $(this).css('color','#8992A3');
 	    }
 	});
+	
+	// show/hide inactive users
+	$('.badge-In-active').parent().hide();
+	$('.dashdropdown-check input').click(function(){
+	    $('.badge-In-active').parent().toggle();
+	});
 });
 </script>    
     <div class="dash-contentarea">
@@ -105,7 +111,7 @@ $(document).ready(function(){
                                         @if($v->status == 0)
                                             <a href="{{route('blockUser',[$v->id,1])}}"  class="dash-page-listactions ml-1"> ACTIVE</a>
                                         @else
-                                            <a href="{{route('blockUser',[$v->id,0])}}"  class="dash-page-listactions ml-1"> DEACTIVE</a>
+                                            <a href="{{route('blockUser',[$v->id,0])}}"  class="dash-page-listactions ml-1"> DEACTIVATE</a>
                                         @endif
                                     @endif
                                 </div>
@@ -163,7 +169,7 @@ $(document).ready(function(){
 {{--                                            @if($v->status == 0)--}}
 {{--                                                <div class="dash-page-listactions" onclick="window.location.href='{{route('blockUser',[$v->id,1])}}'">ACTIVE</div>--}}
 {{--                                            @else--}}
-{{--                                                <div class="dash-page-listactions" onclick="window.location.href='{{route('blockUser',[$v->id,0])}}'" >DEACTIVE</div>--}}
+{{--                                                <div class="dash-page-listactions" onclick="window.location.href='{{route('blockUser',[$v->id,0])}}'" >DEACTIVATE</div>--}}
 {{--                                            @endif--}}
 {{--                                        @endif--}}
 {{--                                    </li>--}}

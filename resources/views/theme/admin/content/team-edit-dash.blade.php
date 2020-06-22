@@ -54,7 +54,7 @@ $(document).ready(function(){
 					<div>
 						<label>PROJECT*</label>
 						<select class="addcontent-projectdrop" name="project">
-							<option style="color:#8992A3;" disabled="disabled" selected="selected">Select an Option</option>
+							<option style="color:#8992A3;" disabled="disabled" selected="selected">Select a Project</option>
 							@foreach($projects as $k => $v)
 								<option value="{{$v->id}}" @if($v->id == $content->project_id) selected @endif>{{$v->project_name}}</option>
 							@endforeach
@@ -63,7 +63,7 @@ $(document).ready(function(){
 					<div>
 						<label>STATUS*</label>
 						<select class="addcontent-statusdrop" name="status">
-							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select an Option</option>
+							<option style="color:#8992A3;" disabled="disabled" selected="selected" value="null">Select a Status</option>
 							<option value="1"  @if($content->status == 1) selected @endif>Topic Proposed</option>
 							<option value="2" @if($content->status == 2) selected @endif>Topic Approved</option>
 							<option value="3" @if($content->status == 3) selected @endif>Writing</option>
