@@ -2491,6 +2491,14 @@ ul.dash-list-personas li:nth-child(3) {
 	outline: none;
 }
 
+.getstatus {
+	line-height: 0;
+}
+
+.badge-In-active {
+	padding-top: 11px !important;
+}
+
 
 
 

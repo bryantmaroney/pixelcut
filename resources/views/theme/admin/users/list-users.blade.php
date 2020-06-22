@@ -75,7 +75,7 @@
                             <td >{{$v->first_name}}</td>
                             <td>{{$v->last_name}}</td>
                             <td>{{\Carbon\Carbon::parse($v->creatd_at)->toDateString()}}</td>
-                            <td  class="@if($v->status_name == 'Active')badge-active @else badge-In-active @endif">{{$v->status_name}}</td>
+                            <td class="getstatus @if($v->status_name == 'Active')badge-active @else badge-In-active @endif">{{$v->status_name}}</td>
                             <td>{{$v->role_name}} </td>
                             <td>{{\Carbon\Carbon::parse($v->last_login)->toDateTimeString()}} </td>
                             <td>
