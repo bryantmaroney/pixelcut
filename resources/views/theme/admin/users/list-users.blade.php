@@ -103,6 +103,18 @@
                 <div class="row ml-0 mt-2">
                     {{ $data->links('vendor.pagination.bootstrap-4') }}
                 </div>
+                
+<script>                
+$(document).ready(function(){
+	//$('.badge-In-active').parent().hide();
+	if (window.location.href.indexOf("active=0") > -1) {
+	    $('.badge-In-active').parent().show();
+	} else {
+		$('.badge-In-active').parent().hide();
+	}
+});
+</script>        
+                
 
 
 

@@ -14,7 +14,7 @@
     <div class="dash-contentarea">
         <div class="dash-contentarea-wrapper">
 {{--            <div class="dash-page-title">PROJECTS</div>--}}
-            <div class="dash-page-title">Team Member Dashboard</div>
+            <div class="dash-page-title">Projects</div>
             <div class="dash-page-addcontent" onclick="window.location.href='{{route('add-new-project')}}'">ADD PROJECT <span></span></div>
             <form action="{{route('list-projects')}}" method="get">
                 <div class="dash-page-searcharea">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="dashdropdown-check">
 {{--                        <input type="checkbox" name="discarded"  value="0"> Show Inactive--}}
-                        <button type="submit" class="dash-page-listactions" style="float: right;     margin-left: 34px;     height: 36px;     margin-top: -4px;  color: white;">Search</button>
+                        <button type="submit" class="dash-page-listactions" style="float: right;     margin-left: 34px;height: 36px;margin-top: -4px;  color: white;">Search</button>
                     </div>
                 </div>
             </form>
