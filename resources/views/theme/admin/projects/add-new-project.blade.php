@@ -32,21 +32,6 @@
 		}
 
 	</style>
-
-<script>
-$(document).ready(function(){
-	$('.add-project-name div select').css('color','rgba(137, 146, 163, 0.4)');
-	$('.add-project-name div select').change(function() {
-	    var current = $(this).val();
-	    if (current != 'null') {
-	        $(this).css('color','#333');
-	    } else {
-	        $(this).css('color','#8992A3');
-	    }
-	});
-});
-</script>
-	
 	<div class="dash-contentarea">
 		<div class="dash-contentarea-wrapper">
 {{--			<div class="dash-page-title">Add New Project</div>--}}
@@ -78,32 +63,28 @@ $(document).ready(function(){
 						<label>CLIENT WEBSITE</label>
 						<input type="text" name="website" value="{{old('website')}}">
 					</div>
-					<div class="add-project-project-manager-drop">
+					<div>
 						<label>PROJECT MANAGER</label>
 						<select class="addcontent-projectdrop" name="p_manager">
-							<option style="color: rgba(137, 146, 163, 0.4) !important;" disabled="disabled" selected="selected" value="null">Select a PM</option>
 							@foreach($projectManagers as $v)
 								<option value="{{$v->id}}" {{old('p_manager') == $v->id ? 'selected' :''}}>{{$v->first_name}} {{$v->last_name}}</option>
 							@endforeach
 						</select>
-						<span></span>
 					</div>
-					<div class="add-project-status-drop">
-						<label>STATUS</label>
+					<div>
+						<label>Status</label>
 						<select class="addcontent-projectdrop" name="status">
-							<option style="color: rgba(137, 146, 163, 0.4) !important;" disabled="disabled" selected="selected" value="null">Select Status</option>
-							<option value="1">Active</option>
-							<option value="0" >Inactive</option>
+								<option value="1" selected >Active</option>
+								<option value="0" >Inactive</option>
 						</select>
-						<span></span>
 					</div>
 				</div>
 
-				<div class="add-project add-points-of-contact">
+				<div class="add-project">
 					<label>POINTS OF CONTACT</label>
-					<input type="text" name='user_name' class="tags-look" placeholder='Type to add users..' value="{{old('user_name')}}">
+					<input type="text" name='user_name' class="tags-look" placeholder='Search All Users' value="{{old('user_name')}}">
 				</div>
-{{--				<div class="tagify__input--outside"></div>--}}
+{{--					<div class="tagify__input--outside"></div>--}}
 {{--				<div class="add-project-points">--}}
 {{--					<label>POINTS OF CONTACT</label>--}}
 {{--					<input type="text" placeholder="Search All Users" name="user_name" >--}}
@@ -120,7 +101,7 @@ $(document).ready(function(){
 				</div>
 
 				<div class="add-project-pillars">
-					<div>
+					<div class="set-pillar">
 						<label>PILLARS</label>
 						<textarea name="pillars" class="textarea">{{old('pillars')}}</textarea>
 					</div>

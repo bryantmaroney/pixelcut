@@ -15,6 +15,20 @@ body {
 	outline: none;
 }
 
+input::placeholder, textarea::placeholder {
+	color: #8F9BB3;
+}
+
+tags span {
+	color: #8F9BB3;
+	font-size: 15px;
+}
+
+.tagify__input, .tagify__input::before {
+	color: #8F9BB3;
+	font-size: 15px;
+}
+
 .logo-wrapper {
 	position: absolute;
 	top: 50%;
@@ -708,8 +722,13 @@ ul.dash-page-listtitles li:nth-child(6) {
 	line-height: 24px;
 	margin-top: 15px;
 	padding: 0 20px;
-	color: #FFFFFF;
+	color: #FFFFFF !important;
 	cursor: pointer;
+}
+
+.dash-page-listactions:hover {
+	background-color: #2D59E2;
+	text-decoration: none;
 }
 
 button.dash-page-listactions {
@@ -1046,7 +1065,7 @@ input.addcontent-wordcount {
 	background: #F7F9FC;
 	border: 1px solid #E4E9F2;
 	border-radius: 4px;
-	font-size: 14px;
+	font-size: 15px;
 	padding: 12px;
 	height: 180px;
 }
@@ -1247,7 +1266,7 @@ input.addcontent-wordcount {
     background: #F7F9FC;
     border: 1px solid #E4E9F2;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .team-addcontent-voice div textarea:hover {
@@ -1288,7 +1307,7 @@ input.addcontent-wordcount {
     background: #F7F9FC;
     border: 1px solid #E4E9F2;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .team-addcontent-notes div textarea:hover {
@@ -1299,6 +1318,10 @@ input.addcontent-wordcount {
 	box-shadow: 0 2px 10px 0 rgba(157,157,157,0.5) !important;
 	border: 1px solid #3366FF !important;
 	outline: none;
+}
+
+.team-addcontent-notes div textarea::placeholder {
+	color: #8F9BB3;
 }
 
 .team-addcontent-meta {
@@ -1336,7 +1359,7 @@ input.addcontent-wordcount {
     background: #F7F9FC;
     border: 1px solid #E4E9F2;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 15px;
     outline: none;
 }
 
@@ -2396,7 +2419,7 @@ ul.dash-list-personas li:nth-child(3) {
 	background: #F7F9FC;
 	border: 1px solid #E4E9F2;
 	border-radius: 4px;
-	font-size: 14px;
+	font-size: 15px;
 	padding: 12px;
 	height: 93px;
 }
@@ -2436,7 +2459,8 @@ ul.dash-list-personas li:nth-child(3) {
 }
 .discard-button{
 	float: right !important;
-	width: 110px !important;
+	/*width: 110px !important;*/
+	width: auto;
 	height: 40px !important;
 	font-family: 'Open Sans', sans-serif !important;
 	color: #FFFFFF !important;
@@ -2497,6 +2521,14 @@ ul.dash-list-personas li:nth-child(3) {
 
 .badge-In-active {
 	padding-top: 11px !important;
+}
+
+.set-pillar .tagify__input:empty::before {
+	content: 'Add a Pillar';
+}
+
+.clustertext .tagify__input:empty::before {
+	content: 'Add your Clusters';
 }
 
 
